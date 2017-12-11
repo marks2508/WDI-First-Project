@@ -2,7 +2,7 @@ console.log('JS loaded - fine');
 $(() => {
 
   const $horse = $('.choice');
-  let $odds = $('.odds');
+  const $odds = $('.odds');
   const $betting = $('.bet');
   const $playerWallet = $('.playerWallet');
   const $onePound = $('.onePound');
@@ -14,14 +14,14 @@ $(() => {
   const $reset = $('.resetBet');
   const $secondPlace = $('.secondPlace');
   const $thirdPlace = $('.thirdPlace');
-  let $cashAvailable = $('.cashAvailable');
+  const $cashAvailable = $('.cashAvailable');
   const $placeBet = $('.placeBet');
-  let $resultDisplayArea = $('.result');
-  let $resultArray = $('.results');
+  const $resultDisplayArea = $('.result');
+  const $resultArray = $('.results');
   let winner = null;
   let secondPlace = null;
   let thirdPlace = null;
-  let $finalBet = $('.finalBet');
+  const $finalBet = $('.finalBet');
   let betAmount = 0;
 
   $horse.on('click', (e) => {
@@ -222,6 +222,7 @@ $(() => {
       }
     });
   });
+
   $('#go').click(function() {
     $('.horse7').animate({
       left: 1000
@@ -243,6 +244,7 @@ $(() => {
       }
     });
   });
+
   $('#go').click(function() {
     $('.horse8').animate({
       left: 1000
