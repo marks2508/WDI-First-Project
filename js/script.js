@@ -94,7 +94,7 @@ $(() => {
     $('.horse1').animate({
       left: 1000
     }, {
-      duration: Math.floor(Math.random() * 9000) + 1,
+      duration: Math.floor(Math.random() * 9000),
       step: function(now){
         $( '.horse1:gt(0)').css('left', now );
       }
@@ -116,7 +116,7 @@ $(() => {
     $('.horse2').animate({
       left: 1000
     }, {
-      duration: Math.floor(Math.random() * 9000) + 1,
+      duration: Math.floor(Math.random() * 9000),
       step: function(now){
         $( '.horse2:gt(0)').css('left', now );
       }
@@ -138,7 +138,7 @@ $(() => {
     $('.horse3').animate({
       left: 1000
     }, {
-      duration: Math.floor(Math.random() * 9000) + 1,
+      duration: Math.floor(Math.random() * 9000),
       step: function(now){
         $( '.horse3:gt(0)').css('left', now );
       }
@@ -160,7 +160,7 @@ $(() => {
     $('.horse4').animate({
       left: 1000
     }, {
-      duration: Math.floor(Math.random() * 9000) + 1,
+      duration: Math.floor(Math.random() * 9000),
       step: function(now){
         $( '.horse4:gt(0)').css('left', now );
       }
@@ -182,7 +182,7 @@ $(() => {
     $('.horse5').animate({
       left: 1000
     }, {
-      duration: Math.floor(Math.random() * 9000) + 1,
+      duration: Math.floor(Math.random() * 9000),
       step: function(now){
         $( '.horse5:gt(0)').css('left', now );
       }
@@ -204,7 +204,7 @@ $(() => {
     $('.horse6').animate({
       left: 1000
     }, {
-      duration: Math.floor(Math.random() * 9000) + 1,
+      duration: Math.floor(Math.random() * 9000),
       step: function(now){
         $( '.horse6:gt(0)').css('left', now );
       }
@@ -226,7 +226,7 @@ $(() => {
     $('.horse7').animate({
       left: 1000
     }, {
-      duration: Math.floor(Math.random() * 9000) + 1,
+      duration: Math.floor(Math.random() * 9000),
       step: function(now){
         $( '.horse6:gt(0)').css('left', now );
       }
@@ -248,7 +248,7 @@ $(() => {
     $('.horse8').animate({
       left: 1000
     }, {
-      duration: Math.floor(Math.random() * 9000) + 1,
+      duration: Math.floor(Math.random() * 9000),
       step: function(now){
         $( '.horse6:gt(0)').css('left', now );
       }
