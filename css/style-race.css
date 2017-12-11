@@ -92,6 +92,7 @@ form {
   font-family: 'Racing Sans One', cursive;
   background-color: red;
   border: 2px solid green;
+  border-radius: 25px;
   width: 180px;
   padding: 3px;
   margin: 10px;
@@ -112,8 +113,10 @@ li {
   padding: 7px;
   margin: 10px;
   border: 2px solid black;
+  border-radius: 27px;
   font-size: 17px;
   font-family: 'Racing Sans One'; cursive;
+  text-shadow: .5px  blue;
   background: red;
   width: 175px;
   list-style: none;
@@ -129,10 +132,18 @@ a {
   position: absolute;
   top: 595px;
 }
+button {
+  margin: 10px;
+  font-family: 'Racing Sans One', cursive;
+}
 .race-buttons {
   position: absolute;
   top: 295px;
   left: 400px;
+  width: 400px;
+  padding: 10px;
+  margin: 10px;
+  font-family: 'Racing Sans One', cursive;
 }
 
 /*p {
