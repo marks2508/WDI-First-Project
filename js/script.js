@@ -134,7 +134,6 @@ $(() => {
     });
   });
 
-
   $('#go').click(function() {
     $('.horse3').animate({
       left: 1000
