@@ -12,11 +12,15 @@ $(() => {
   const $fiftyPound = $('.fiftyPound');
   const $hundredPound = $('.hundredPound');
   const $reset = $('.resetBet');
+  const $secondPlace = $('.secondPlace');
+  const $thirdPlace = $('.thirdPlace');
   let $cashAvailable = $('.cashAvailable');
   const $placeBet = $('.placeBet');
   let $resultDisplayArea = $('.result');
   let $resultArray = $('.results');
   let winner = null;
+  let secondPlace = null;
+  let thirdPlace = null;
   let $finalBet = $('.finalBet');
   let betAmount = 0;
 
@@ -97,7 +101,13 @@ $(() => {
     }).promise().done(function (){
       if(winner === null) {
         winner = 'horse1';
-        $resultArray.text('1. Bullet-Proof: 3/1');
+        $resultArray.text('1st: Bullet-Proof');
+      } else if (secondPlace === null) {
+        secondPlace = 'horse1';
+        $secondPlace.text('2nd: Bullet-Proof');
+      } else if (thirdPlace === null) {
+        thirdPlace = 'horse1';
+        $thirdPlace.text('3rd: Bullet-Proof');
       }
     });
   });
@@ -113,7 +123,13 @@ $(() => {
     }).promise().done(function (){
       if(winner === null) {
         winner = 'horse2';
-        $resultArray.text('Winner: Emerald Fire !');
+        $resultArray.text('1st: Emerald Fire !');
+      } else if (secondPlace === null)  {
+        secondPlace = 'horse2';
+        $secondPlace.text('2nd: Emerald Fire');
+      } else if (thirdPlace === null) {
+        thirdPlace = 'horse2';
+        $thirdPlace.text('3rd: Emerald Fire');
       }
     });
   });
@@ -130,7 +146,13 @@ $(() => {
     }).promise().done(function (){
       if(winner === null) {
         winner = 'horse3';
-        $resultArray.text('Winner: Jalapeno !');
+        $resultArray.text('1st: Jalapeno !');
+      } else if (secondPlace === null)  {
+        secondPlace = 'horse3';
+        $secondPlace.text('2nd: Jalapeno');
+      } else if (thirdPlace === null) {
+        thirdPlace = 'horse3';
+        $thirdPlace.text('3rd: Jalapeno');
       }
     });
   });
@@ -146,7 +168,13 @@ $(() => {
     }).promise().done(function (){
       if(winner === null) {
         winner = 'horse4';
-        $resultArray.text('Winner: Mischief !');
+        $resultArray.text('1st: Mischief !');
+      } else if (secondPlace === null) {
+        secondPlace = 'horse4';
+        $secondPlace.text('2nd: Mischief');
+      } else if (thirdPlace === null) {
+        thirdPlace = 'horse4';
+        $thirdPlace.text('3rd: Mischief');
       }
     });
   });
@@ -162,7 +190,13 @@ $(() => {
     }).promise().done(function (){
       if(winner === null) {
         winner = 'horse5';
-        $resultArray.text('Winner: Please Baby !');
+        $resultArray.text('1st: Please Baby !');
+      } else if (secondPlace === null) {
+        secondPlace = 'horse5';
+        $secondPlace.text('2nd: Please Baby');
+      } else if (thirdPlace === null) {
+        thirdPlace = 'horse5';
+        $thirdPlace.text('3rd: Please Baby');
       }
     });
   });
@@ -178,7 +212,13 @@ $(() => {
     }).promise().done(function (){
       if(winner === null) {
         winner = 'horse6';
-        $resultArray.text('Winner: Rise to Glory !');
+        $resultArray.text('1st: Rise to Glory !');
+      } else if (secondPlace === null) {
+        secondPlace = 'horse6';
+        $secondPlace.text('2nd: Rise to Glory');
+      } else if (thirdPlace === null) {
+        thirdPlace = 'horse6';
+        $thirdPlace.text('3rd: Rise to Glory');
       }
     });
   });
@@ -193,7 +233,13 @@ $(() => {
     }).promise().done(function (){
       if(winner === null) {
         winner = 'horse7';
-        $resultArray.text('Winner: Tramp Time !');
+        $resultArray.text('1st: Tramp Time !');
+      } else if (secondPlace === null) {
+        secondPlace = 'horse7';
+        $secondPlace.text('2nd: Time Tramp');
+      } else if (thirdPlace === null) {
+        thirdPlace = 'horse7';
+        $thirdPlace.text('3rd: Time Tramp');
       }
     });
   });
@@ -208,7 +254,13 @@ $(() => {
     }).promise().done(function (){
       if(winner === null) {
         winner = 'horse8';
-        $resultArray.text('Winner: Witch Craft !');
+        $resultArray.text('1st: Witch Craft !');
+      } else if (secondPlace === null) {
+        secondPlace = 'horse8';
+        $secondPlace.text('2nd: Witch Craft');
+      } else if (thirdPlace === null) {
+        thirdPlace = 'horse8';
+        $thirdPlace.text('3rd: Witch Craft');
       }
     });
   });
