@@ -32,8 +32,8 @@ div {
   position: relative;
   display: block;
   top: 70px;
-  width: 40px;
-  height: 40px;
+  width: 20px;
+  height: 20px;
   float: left;
   margin: 5px;
 }
@@ -48,36 +48,43 @@ div {
 
 .horse1 {
   display: block;
-
   background-color: blue;
+  color: white;
 }
 .horse2 {
   display: block;
   background-color: red;
+  color: white;
 }
 .horse3 {
   display: block;
   background-color: green;
+  color: white;
 }
 .horse4 {
   display: block;
   background-color: yellow;
+  color: black;
 }
 .horse5 {
   display: block;
   background-color: black;
+  color: white;
 }
 .horse6 {
   display: block;
   background-color: purple;
+  color: white;
 }
 .horse7 {
   display: block;
   background-color: orange;
+  color: white;
 }
 .horse8 {
   display: block;
   background-color: grey;
+  color: white;
 }
 
 form {
@@ -117,6 +124,15 @@ a {
   text-decoration: none;
   font-family: 'Racing Sans One',cursive;
   font-size: 25px;
+}
+.race {
+  position: absolute;
+  top: 595px;
+}
+.race-buttons {
+  position: absolute;
+  top: 295px;
+  left: 400px;
 }
 
 /*p {

@@ -18,6 +18,7 @@ $(() => {
   let $resultArray = $('.results');
   let winner = null;
   let $finalBet = $('.finalBet');
+  let betAmount = 0;
 
   $horse.on('click', (e) => {
     console.log('hello');
@@ -29,7 +30,7 @@ $(() => {
 
   $onePound.on('click', (e)  => {
     console.log('one');
-    const betAmount = $(e.target).val();
+    betAmount = $(e.target).val();
     console.log(betAmount);
     $playerWallet.text(betAmount);
   });
@@ -68,6 +69,7 @@ $(() => {
     console.log('reset');
     $playerWallet.html('Your bet: ');
     $cashAvailable.html(250);
+    $betting.text('To bet on a horse, click on its name');
   });
 
   $placeBet.on('click', (e) => {
@@ -90,7 +92,7 @@ $(() => {
     }).promise().done(function (){
       if(winner === null) {
         winner = 'horse1';
-        $resultArray.text('Winner is:  Bullet-Proof !');
+        $resultArray.text('Winner: Bullet-Proof !');
       }
     });
   });
@@ -106,7 +108,7 @@ $(() => {
     }).promise().done(function (){
       if(winner === null) {
         winner = 'horse2';
-        $resultArray.text('Winner is:  Emerald Fire !');
+        $resultArray.text('Winner: Emerald Fire !');
       }
     });
   });
@@ -123,7 +125,7 @@ $(() => {
     }).promise().done(function (){
       if(winner === null) {
         winner = 'horse3';
-        $resultArray.text('Winner is:  Jalapeno !');
+        $resultArray.text('Winner: Jalapeno !');
       }
     });
   });
@@ -139,7 +141,7 @@ $(() => {
     }).promise().done(function (){
       if(winner === null) {
         winner = 'horse4';
-        $resultArray.text('Winner is:  Mischief !');
+        $resultArray.text('Winner: Mischief !');
       }
     });
   });
@@ -155,7 +157,7 @@ $(() => {
     }).promise().done(function (){
       if(winner === null) {
         winner = 'horse5';
-        $resultArray.text('Winner is:  Please Baby !');
+        $resultArray.text('Winner: Please Baby !');
       }
     });
   });
@@ -171,7 +173,7 @@ $(() => {
     }).promise().done(function (){
       if(winner === null) {
         winner = 'horse6';
-        $resultArray.text('Winner is:  Rise to Glory !');
+        $resultArray.text('Winner: Rise to Glory !');
       }
     });
   });
@@ -186,7 +188,7 @@ $(() => {
     }).promise().done(function (){
       if(winner === null) {
         winner = 'horse7';
-        $resultArray.text('Winner is:  Tramp Time !');
+        $resultArray.text('Winner: Tramp Time !');
       }
     });
   });
@@ -201,7 +203,7 @@ $(() => {
     }).promise().done(function (){
       if(winner === null) {
         winner = 'horse8';
-        $resultArray.text('Winner is:  Winter Warmer !');
+        $resultArray.text('Winner: Witch Craft !');
       }
     });
   });
