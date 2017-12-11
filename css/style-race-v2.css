@@ -1,0 +1,374 @@
+.background {
+  background-size: cover;
+  width: 100%;
+  height: 100%;
+  opacity: 0.5;
+  text-decoration: none;
+}
+.horse-logo {
+  display: flex;
+  position: absolute;
+  top: 65px;;
+  left: 47%;
+  opacity: 1;
+}
+h1 {
+  margin-bottom: 10px;
+  padding: 0;
+}
+
+h2 {
+  font-size: 13px;
+  color: gray;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+}
+
+button {
+  background-color: green;
+  border: 0;
+  color: white;
+  font-weight: bold;
+  text-transform: uppercase;
+  padding: 10px 15px;
+  box-shadow: 0 3px 0 rgba(0, 0, 0, 0.1);
+  transform: translateY(0);
+  &:hover {
+    cursor: pointer;
+    background: darken(green, 5%);
+  }
+  &:active,
+  &:focus {
+    box-shadow: 0 0 0 rgba(0, 0, 0, 0);
+    transform: translateY(3px);
+  }
+}
+
+.runner {
+  transition: left 9.58s ease-in-out;
+  @for $i from 1 through 5 {
+    $rand: (random(100) / 100);
+    &.no#{$i} {
+      transition-duration: (9.58s + (1 * $rand));
+      transition-timing-function: cubic-bezier(($rand * 100), ($rand * 100), ($rand / $rand), $rand);
+    }
+  }
+}
+
+.window-reset {
+  position: absolute;
+  overflow: hidden;
+  width: 200px;
+  font-size: 20px;
+  top: 20%;
+  height: 30%;
+  left: 50%;
+  margin-left: -130px;
+  background: #f7f7f7;
+  z-index: 6;
+  text-align: center;
+  padding: 30px;
+  box-shadow: inset 0 0 0 5px rgba(0, 0, 0, 0.1), 10px 10px 0 rgba(0, 0, 0, 0.05), -10px 10px 0 rgba(0, 0, 0, 0.05);
+  &.show {
+    display: block;
+  }
+  &.hide {
+    display: none;
+  }
+}
+
+.result-list {
+  list-style-type: none;
+  margin-left: 0;
+  padding-left: 0;
+  li {
+    font-size: 15px;
+    margin-bottom: 5px;
+
+    sup {
+      position: relative;
+      top: 3px;
+    }
+  }
+  li .name {
+    &::before {
+      font-weight: bold;
+    }
+    &.dude1::before {
+      content: "Green Dude";
+      color: green;
+      text-transform: uppercase;
+    }
+    &.dude2::before {
+      content: "Red Dude";
+      color: red;
+      text-transform: uppercase;
+    }
+    &.dude3::before {
+      content: "Blue Dude";
+      color: blue;
+      text-transform: uppercase;
+    }
+    &.dude4::before {
+      content: "Purple Dude";
+      color: purple;
+      text-transform: uppercase;
+    }
+    &.dude5::before {
+      content: "Gray Dude";
+      color: grey;
+      text-transform: uppercase;
+    }
+  }
+}
+
+.reset {
+  background-color: green;
+  color: white;
+  font-size: 13px;
+  border: 0;
+  padding: 5px 10px;
+  position: relative;
+  z-index: 1;
+}
+
+.race-wrap {
+  position: relative;
+  padding: 50px 10px 0;
+  margin-top: 30px;
+
+  @media screen and (min-width: 980px) {
+    margin-top: 0;
+    padding: 80px 30px 0;
+  }
+}
+
+html {
+  font-family: 'Josefin Sans', sans-serif;
+}
+
+.event-wrap {
+  min-height: 500px;
+  overflow-x: hidden;
+  flex-direction: column;
+  position: relative;
+  padding: 2rem 0 3rem;
+}
+
+#race {
+  position: relative;
+  border: 1px solid black;
+  border-bottom: 0;
+}
+
+.lane {
+  border-bottom: 3px solid white;
+  height: 3rem;
+  padding: 0 20px;
+  position: relative;
+  background: #fb8036;
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  align-items: stretch;
+  svg {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+  }
+  &.no5 {
+    border-bottom: 1px solid black;
+  }
+}
+
+.runner {
+  z-index: 5;
+  top: 50%;
+  margin-top: -15px;
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  line-height: 30px;
+  text-align: center;
+  left: 1%;
+  &.no1 svg {
+    fill: green;
+  }
+  &.no2 svg {
+    fill: red;
+  }
+  &.no3 svg {
+    fill: blue;
+  }
+  &.no4 svg {
+    fill: purple;
+  }
+  &.no5 svg {
+    fill: grey;
+  }
+}
+
+.start,
+.finish {
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-size: 12px;
+  position: absolute;
+  top: -60px;
+  bottom: 0;
+  padding: 0;
+  z-index: 2;
+  border-left: 1px solid #000;
+  &::before,
+  &::after {
+    position: absolute;
+    top: 0;
+    padding: 5px 7px;
+    border: 1px solid black;
+    border-left: 0;
+  }
+}
+
+.start {
+  left: 30px;
+  &::before {
+    content: "Start";
+  }
+
+  @media screen and (min-width: 640px) {
+    left: 40px;
+  }
+
+  @media screen and (min-width: 980px) {
+    left: 50px;
+  }
+
+}
+
+.finish {
+  right: 30px;
+  &::after {
+    content: "Finish";
+  }
+
+  @media screen and (min-width: 640px) {
+    right: 40px;
+  }
+
+   @media screen and (min-width: 980px) {
+    right: 50px;
+  }
+}
+
+.race-intro {
+  text-align: center;
+}
+
+.fa-trophy {
+  color: gold;
+  font-size: 25px;
+}
+
+.result-1 {
+  animation-delay: 1.2s;
+}
+
+.result-2 {
+  animation-delay: 0.9s;
+}
+
+.result-2 {
+  animation-delay: 0.6s;
+}
+
+.pistol {
+  .fa {
+    display: none;
+  }
+  &::before {
+    content: "Go!";
+  }
+  &.running {
+    background-color: transparent;
+    padding: 10px;
+    color: gray;
+    box-shadow: none;
+    border-radius: 100%;
+    &:hover {
+      cursor: default;
+    }
+    &::before {
+      content: "";
+    }
+    .fa {
+      display: block;
+    }
+  }
+}
+
+.made-by {
+  letter-spacing: 1px;
+  bottom: 20px;
+  text-align: center;
+
+  a {
+    color: darken(#51bce8, 10%);
+
+    text-decoration: none;
+
+    &:hover {
+      color: #51bce8;
+    }
+  }
+}
+form {
+  display: flex;
+  font-family: cursive;
+  border: 2px solid green;
+  width: 180px;
+  padding: 3px;
+  margin: 10px;
+  position: absolute;
+  top: 80px;
+  right: 40px;
+}
+td {
+  margin-left: auto;
+  border: 2px solid auto;
+  padding: 10px;
+}
+ul {
+  position: absolute;
+  top: 120px;
+}
+li {
+  padding: 10px;
+  margin: 15px;
+  border: 2px solid black;
+  font-size: 22px;
+  font-family: 'Racing Sans One'; cursive;
+  background: red;
+  width: 250px;
+  list-style: none;
+  cursor: pointer;
+
+}
+a {
+  text-decoration: none;
+  font-family: 'Racing Sans One',cursive;
+  font-size: 25px;
+}
+/*p {
+  position: absolute;
+  top: 44%;
+  left: 43%;
+  color: blue;
+  font-family: 'Racing Sans One', cursive;
+  font-size: 30px;
+}*/
+div {
+  width: 20px;
+  height: 20px;
+  margin-bottom: 10px;
+}

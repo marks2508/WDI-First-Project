@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title> And they're off! </title>
+    <link href="https://fonts.googleapis.com/css?family=Racing+Sans+One" rel="stylesheet">
+    <link rel="stylesheet" href="css/animate.css">
+    <link rel="stylesheet" href="./css/style-race.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src="js/script.js" charset="utf-8"></script>
+  </head>
+  <body>
+    <img src="./images/background-1.jpg" class="background">
+    <h1 class="header">And They're Off!</h1>
+  <ul>
+    <li class="choice">Bullet-Proof: 3/1</li>
+    <li class="choice">Emerald Fire: 5/1</li>
+    <li class="choice">Jalapeno: 1/2</li>
+    <li class="choice">Mischief: 7/1</li>
+    <li class="choice">Please Baby: 10/1</li>
+    <li class="choice">Rise to Glory: 4/1</li>
+    <li class="choice">Tramp Time: 20/1</li>
+    <li class="choice">Winter Warmer: 9/1</li>
+  </ul>
+  <form name="total">
+    <table>
+            <tr>
+               <td colspan="2">
+                 <p class="bet">To bet on a horse, click on its name</p>
+                <input type="text" placeholder="horse" class="betting">
+                <input class="help">
+                <input type="text" name="display" id="display" disabled>
+               </td>
+            </tr>
+            <tr>
+               <td><input type="button" name="one" value="£1" onclick="total.display.value += '£1'"></td>
+               <td><input type="button" name="twenty" value="£20" onclick="total.display.value += '£20'"></td>
+
+            </tr>
+            <tr>
+               <td><input type="button" name="four" value="£5" onclick="total.display.value += '£5'"></td>
+               <td><input type="button" name="five" value="£50" onclick="total.display.value += '£50'"></td>
+            </tr>
+            <tr>
+               <td><input type="button" name="seven" value="£10" onclick="total.display.value += '£10'"></td>
+               <td><input type="button" name="eight" value="£100" onclick="total.display.value += '£100'"></td>
+            </tr>
+            <tr>
+               <td><input type="button" id="clear" name="clear" value="Reset" onclick="total.display.value = ''"></td>
+               <td><input type="button" name="zero" value="Place Bet" onclick="total.display.value += '0'"></td>
+            </tr>
+    </table>
+  </form>
+  </div>
+  <div class="race">
+    <p><button id='go'>Start race</button></p>
+    <div class="horse1">1</div>
+    <div class="horse2">2</div>
+    <div class="horse3">3</div>
+    <div class="horse4">4</div>
+    <div class="horse5">5</div>
+    <div class="horse6">6</div>
+  </div>
+  </body>
+</html>
