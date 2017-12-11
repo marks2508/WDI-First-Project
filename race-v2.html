@@ -24,34 +24,34 @@
   </ul>
   <form name="total">
     <table>
-            <tr>
-               <td colspan="2">
-                 <p class="bet">To bet on a horse, click on its name</p>
-                <input type="text" placeholder="horse" class="betting">
-                <input class="help">
-                <input type="text" name="display" id="display" disabled>
-               </td>
-            </tr>
-            <tr>
-               <td><input type="button" name="one" value="£1" onclick="total.display.value += '£1'"></td>
-               <td><input type="button" name="twenty" value="£20" onclick="total.display.value += '£20'"></td>
+      <tr>
+        <td colspan="2">
+          <p class="bet">To bet on a horse, click on its name</p>
+          <p class="playerWallet">Your bet: </p>
+          <p class="cashAvailable">Your cash: </p>
 
-            </tr>
-            <tr>
-               <td><input type="button" name="four" value="£5" onclick="total.display.value += '£5'"></td>
-               <td><input type="button" name="five" value="£50" onclick="total.display.value += '£50'"></td>
-            </tr>
-            <tr>
-               <td><input type="button" name="seven" value="£10" onclick="total.display.value += '£10'"></td>
-               <td><input type="button" name="eight" value="£100" onclick="total.display.value += '£100'"></td>
-            </tr>
-            <tr>
-               <td><input type="button" id="clear" name="clear" value="Reset" onclick="total.display.value = ''"></td>
-               <td><input type="button" name="zero" value="Place Bet" onclick="total.display.value += '0'"></td>
-            </tr>
+          <input type="text" placeholder="horse" class="betting">
+          <input type="text" class="amount">
+        </td>
+      </tr>
+      <tr>
+        <td><input type="button" name="one" class="onePound" value="£1"></td>
+        <td><input type="button" name="twenty" class="twentyPound" value="£20"></td>
+      </tr>
+      <tr>
+        <td><input type="button" name="four" class="fivePound" value="£5"></td>
+        <td><input type="button" name="five" class="fiftyPound" value="£50"></td>
+      </tr>
+      <tr>
+        <td><input type="button" name="seven" class="tenPound" value="£10"></td>
+        <td><input type="button" name="eight" class="hundredPound" value="£100"></td>
+      </tr>
+      <tr>
+        <td><input type="button" name="clear" class="resetBet">Reset</td>
+        <td><input type="button" name="zero" class="placeBet">Place Bet</td>
+      </tr>
     </table>
   </form>
-  </div>
   <div class="race">
     <p><button id='go'>Start race</button></p>
     <div class="horse1">1</div>

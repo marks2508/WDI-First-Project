@@ -12,7 +12,7 @@ h1 {
 }
 .bet {
   font-family: 'Racing Sans One';
-  font-size: px;
+  font-size: 20px;
 }
 .background {
   background-size: cover;
@@ -36,6 +36,11 @@ div {
   height: 40px;
   float: left;
   margin: 5px;
+}
+.oddscalc {
+  position: absolute;
+  display: flex;
+  top: 64px;
 }
 
 .horse1 {
