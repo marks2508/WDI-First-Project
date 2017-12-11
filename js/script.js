@@ -17,6 +17,7 @@ $(() => {
   let $resultDisplayArea = $('.result');
   let $resultArray = $('.results');
   let winner = null;
+  let $finalBet = $('.finalBet');
 
   $horse.on('click', (e) => {
     console.log('hello');
@@ -73,11 +74,12 @@ $(() => {
     console.log('bet placed');
     const moneyLeft = $cashAvailable.html() - $playerWallet.html();
     $cashAvailable.html(moneyLeft);
+    $finalBet.text($bet);
   });
 
 
 
-  $( '#go' ).click(function() {
+  $('#go').click(function() {
     $('.horse1:first').animate({
       left: 1000
     }, {
@@ -93,7 +95,7 @@ $(() => {
     });
   });
 
-  $( '#go' ).click(function() {
+  $('#go').click(function() {
     $('.horse2:first').animate({
       left: 1000
     }, {
@@ -110,7 +112,7 @@ $(() => {
   });
 
 
-  $( '#go' ).click(function() {
+  $('#go').click(function() {
     $('.horse3:first').animate({
       left: 1000
     }, {
@@ -126,7 +128,7 @@ $(() => {
     });
   });
 
-  $( '#go' ).click(function() {
+  $('#go').click(function() {
     $('.horse4:first').animate({
       left: 1000
     }, {
@@ -142,7 +144,7 @@ $(() => {
     });
   });
 
-  $( '#go' ).click(function() {
+  $('#go').click(function() {
     $('.horse5:first').animate({
       left: 1000
     }, {
@@ -158,7 +160,7 @@ $(() => {
     });
   });
 
-  $( '#go' ).click(function() {
+  $('#go').click(function() {
     $('.horse6:first').animate({
       left: 1000
     }, {
@@ -173,7 +175,7 @@ $(() => {
       }
     });
   });
-  $( '#go' ).click(function() {
+  $('#go').click(function() {
     $('.horse7:first').animate({
       left: 1000
     }, {
@@ -188,7 +190,7 @@ $(() => {
       }
     });
   });
-  $( '#go' ).click(function() {
+  $('#go').click(function() {
     $('.horse8:first').animate({
       left: 1000
     }, {

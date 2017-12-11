@@ -48,6 +48,7 @@ div {
 
 .horse1 {
   display: block;
+
   background-color: blue;
 }
 .horse2 {
@@ -82,6 +83,7 @@ div {
 form {
   display: flex;
   font-family: 'Racing Sans One', cursive;
+  background-color: red;
   border: 2px solid green;
   width: 180px;
   padding: 3px;
@@ -100,13 +102,13 @@ ul {
   top: 120px;
 }
 li {
-  padding: 10px;
-  margin: 15px;
+  padding: 7px;
+  margin: 10px;
   border: 2px solid black;
-  font-size: 22px;
+  font-size: 17px;
   font-family: 'Racing Sans One'; cursive;
   background: red;
-  width: 250px;
+  width: 175px;
   list-style: none;
   cursor: pointer;
 
