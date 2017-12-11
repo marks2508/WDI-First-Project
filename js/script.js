@@ -75,8 +75,10 @@ $(() => {
   $placeBet.on('click', (e) => {
     console.log('bet placed');
     const moneyLeft = $cashAvailable.html() - $playerWallet.html();
+    const bet = $playerWallet.html();
     $cashAvailable.html(moneyLeft);
-    $finalBet.text($bet);
+    const horse = 
+    $finalBet.text(bet);
   });
 
 
