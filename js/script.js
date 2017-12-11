@@ -70,6 +70,7 @@ $(() => {
     $playerWallet.html('Your bet: ');
     $cashAvailable.html(250);
     $betting.text('To bet on a horse, click on its name');
+    $finalBet.text = '';
   });
 
   $placeBet.on('click', (e) => {
@@ -77,14 +78,16 @@ $(() => {
     const moneyLeft = $cashAvailable.html() - $playerWallet.html();
     const bet = $playerWallet.html();
     $cashAvailable.html(moneyLeft);
-    const horse = 
-    $finalBet.text(bet);
+    let horse = $betting.text();
+    $finalBet.text(horse);
   });
 
-
+  if ($resultArray === $finalBet) {
+    console.log('peace');
+  }
 
   $('#go').click(function() {
-    $('.horse1:first').animate({
+    $('.horse1').animate({
       left: 1000
     }, {
       duration: Math.floor(Math.random() * 9000) + 1,
@@ -94,13 +97,13 @@ $(() => {
     }).promise().done(function (){
       if(winner === null) {
         winner = 'horse1';
-        $resultArray.text('Winner: Bullet-Proof !');
+        $resultArray.text('1. Bullet-Proof: 3/1');
       }
     });
   });
 
   $('#go').click(function() {
-    $('.horse2:first').animate({
+    $('.horse2').animate({
       left: 1000
     }, {
       duration: Math.floor(Math.random() * 9000) + 1,
@@ -117,7 +120,7 @@ $(() => {
 
 
   $('#go').click(function() {
-    $('.horse3:first').animate({
+    $('.horse3').animate({
       left: 1000
     }, {
       duration: Math.floor(Math.random() * 9000) + 1,
@@ -133,7 +136,7 @@ $(() => {
   });
 
   $('#go').click(function() {
-    $('.horse4:first').animate({
+    $('.horse4').animate({
       left: 1000
     }, {
       duration: Math.floor(Math.random() * 9000) + 1,
@@ -149,7 +152,7 @@ $(() => {
   });
 
   $('#go').click(function() {
-    $('.horse5:first').animate({
+    $('.horse5').animate({
       left: 1000
     }, {
       duration: Math.floor(Math.random() * 9000) + 1,
@@ -165,7 +168,7 @@ $(() => {
   });
 
   $('#go').click(function() {
-    $('.horse6:first').animate({
+    $('.horse6').animate({
       left: 1000
     }, {
       duration: Math.floor(Math.random() * 9000) + 1,
@@ -180,7 +183,7 @@ $(() => {
     });
   });
   $('#go').click(function() {
-    $('.horse7:first').animate({
+    $('.horse7').animate({
       left: 1000
     }, {
       duration: Math.floor(Math.random() * 9000) + 1,
@@ -195,7 +198,7 @@ $(() => {
     });
   });
   $('#go').click(function() {
-    $('.horse8:first').animate({
+    $('.horse8').animate({
       left: 1000
     }, {
       duration: Math.floor(Math.random() * 9000) + 1,
