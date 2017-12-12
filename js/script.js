@@ -356,7 +356,8 @@ $(() => {
 
   $('#startAgain').on('click', () => {
     $horseGroup.attr('style', '');
-    $betting = 'To bet on a horse, click on its name';
+    $betting.text('To bet on a horse, click on its name');
+    $potentialReturn.text('');
   });
 
 });
