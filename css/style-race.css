@@ -54,41 +54,49 @@ div {
   display: block;
   background-color: blue;
   color: white;
+  left: 300px;
 }
 .horse2 {
   display: block;
   background-color: red;
   color: white;
+  left: 300px;
 }
 .horse3 {
   display: block;
   background-color: green;
   color: white;
+  left: 300px;
 }
 .horse4 {
   display: block;
   background-color: yellow;
   color: black;
+  left: 300px;
 }
 .horse5 {
   display: block;
   background-color: black;
   color: white;
+  left: 300px;
 }
 .horse6 {
   display: block;
   background-color: purple;
   color: white;
+  left: 300px;
 }
 .horse7 {
   display: block;
   background-color: orange;
   color: white;
+  left: 300px;
 }
 .horse8 {
   display: block;
   background-color: grey;
   color: white;
+  left: 300px;
 }
 
 form {
