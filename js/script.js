@@ -144,8 +144,8 @@ $(() => {
   });
 
   function checkWinner() {
-    if (horseChoice === $firstPlace) {
-      console.log('You have a winner');
+    if (horseChoice === winner) {
+      alert('You have a winner');
     }
   }
 
@@ -161,7 +161,7 @@ $(() => {
       }
     }).promise().done(function (){
       if(winner === null) {
-        winner = 'horse1';
+        winner = 'Bullet-Proof';
         $firstPlace.text('1st: Bullet-Proof !');
       } else if (secondPlace === null) {
         secondPlace = 'horse1';
@@ -184,7 +184,7 @@ $(() => {
       }
     }).promise().done(function (){
       if (winner === null) {
-        winner = 'horse2';
+        winner = 'Emerald Fire';
         $firstPlace.text('1st: Emerald Fire !');
       } else if (secondPlace === null)  {
         secondPlace = 'horse2';
@@ -207,7 +207,7 @@ $(() => {
       }
     }).promise().done(function (){
       if (winner === null) {
-        winner = 'horse3';
+        winner = 'Jalapeno';
         $firstPlace.text('1st: Jalapeno !');
       } else if (secondPlace === null)  {
         secondPlace = 'horse3';
@@ -230,7 +230,7 @@ $(() => {
       }
     }).promise().done(function (){
       if (winner === null) {
-        winner = 'horse4';
+        winner = 'Mischief';
         $firstPlace.text('1st: Mischief !');
       } else if (secondPlace === null) {
         secondPlace = 'horse4';
@@ -253,7 +253,7 @@ $(() => {
       }
     }).promise().done(function (){
       if (winner === null) {
-        winner = 'horse5';
+        winner = 'Please Baby';
         $firstPlace.text('1st: Please Baby !');
       } else if (secondPlace === null) {
         secondPlace = 'horse5';
@@ -276,10 +276,10 @@ $(() => {
       }
     }).promise().done(function (){
       if (winner === null) {
-        winner = 'horse6';
+        winner = 'Rise to Glory';
         $firstPlace.text('1st: Rise to Glory !');
       } else if (secondPlace === null) {
-        secondPlace = 'horse6';
+        secondPlace = '';
         $secondPlace.text('2nd: Rise to Glory !');
       } else if (thirdPlace === null) {
         thirdPlace = 'horse6';
@@ -299,7 +299,7 @@ $(() => {
       }
     }).promise().done(function (){
       if (winner === null) {
-        winner = 'horse7';
+        winner = 'Time Tramp';
         $firstPlace.text('1st: Tramp Time !');
       } else if (secondPlace === null) {
         secondPlace = 'horse7';
@@ -322,7 +322,7 @@ $(() => {
       }
     }).promise().done(function (){
       if (winner === null) {
-        winner = 'horse8';
+        winner = 'Witch Craft';
         $firstPlace.text('1st: Witch Craft !');
       } else if (secondPlace === null) {
         secondPlace = 'horse8';
