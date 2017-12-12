@@ -20,6 +20,7 @@ $(() => {
   const $placeBet = $('.placeBet');
   const $resultDisplayArea = $('.result');
   const $resultArray = $('.results');
+  let $potentialReturn = $('.potentialReturn');
   let winner = null;
   let secondPlace = null;
   let thirdPlace = null;
@@ -27,28 +28,28 @@ $(() => {
   let betAmount = 0;
   let finalBet = '';
   let wallet = '250';
+
   // Betting area
 
   $horse.on('click', (e) => {
-    console.log('hello');
     const horseChoice = $(e.target).html();
     $betting.text(horseChoice);
     if (horseChoice === '1. Bullet-Proof: 3/1') {
-      $odds.text('3/1');
+      $odds.text('Odds: 3/1');
     } else if (horseChoice === '2. Emerald Fire: 5/1') {
-      $odds.text('5/1');
+      $odds.text('Odds: 5/1');
     } else if (horseChoice === '3. Jalapeno: 1/2') {
-      $odds.text('1/2');
+      $odds.text('Odds: 1/2');
     } else if (horseChoice === '4. Mischief: 7/1') {
-      $odds.text('7/1');
+      $odds.text('Odds: 7/1');
     } else if (horseChoice === '5. Please Baby: 10/1') {
-      $odds.text('10/1');
+      $odds.text('Odds: 10/1');
     } else if (horseChoice === '6. Rise to Glory: 4/1') {
-      $odds.text('4/1');
+      $odds.text('Odds: 4/1');
     } else if (horseChoice === '7. Tramp Time: 20/1') {
-      $odds.text('20/1');
+      $odds.text('Odds: 20/1');
     } else if (horseChoice === '8. Witch Craft: 9/1') {
-      $odds.text('9/1');
+      $odds.text('Odds: 9/1');
     }
   });
 
@@ -106,8 +107,26 @@ $(() => {
     // const bet = $playerWallet.html();
     $cashAvailable.html(moneyLeft);
     const horse = $betting.text();
-    $finalBet.text(horse);
+    if (horse === '1. Bullet-Proof: 3/1') {
+      $potentialReturn.html('Potential return ' + '£' + ($playerWallet.html() * 3));
+    } else if (horse === '2. Emerald Fire: 5/1') {
+      $potentialReturn.html('Potential return ' + '£' + ($playerWallet.html() * 5));
+    } else if (horse === '3. Jalapeno: 1/2') {
+      $potentialReturn.html('Potential return ' + '£' + ($playerWallet.html() * .5));
+    } else if (horse === '4. Mischief: 7/1') {
+      $potentialReturn.html('Potential return ' + '£' + ($playerWallet.html() * 7));
+    } else if (horse === '5. Please Baby: 10/1') {
+      $potentialReturn.html('Potential return ' + '£' + ($playerWallet.html() * 10));
+    } else if (horse === '6. Rise to Glory: 4/1') {
+      $potentialReturn.html('Potential return ' + '£' + ($playerWallet.html() * 4));
+    } else if (horse === '7. Tramp Time: 20/1') {
+      $potentialReturn.html('Potential return ' + '£' + ($playerWallet.html() * 20));
+    } else if (horse === '8. Witch Craft: 9/1') {
+      $potentialReturn.html('Potential return ' + '£' + ($playerWallet.html() * 9));
+    }
   });
+  // $potentialReturn.text($playerWallet.html() *  );
+
 
   // Animation
 
