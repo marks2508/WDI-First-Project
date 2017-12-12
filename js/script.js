@@ -6,7 +6,6 @@ $(() => {
   const $horse = $('.choice');
   const $odds = $('.odds');
   let $betting = $('.bet');
-  const $playerWallet = $('.playerWallet');
   const $horseGroup = $('.horse-group');
 
   const $onePound = $('.onePound');
@@ -31,6 +30,7 @@ $(() => {
   let secondPlace = null;
   let thirdPlace = null;
 
+  const $playerWallet = $('.playerWallet');
   let $finalBet = $('.finalBet');
   let betAmount = 0;
   let finalBet = '';
@@ -358,6 +358,7 @@ $(() => {
     $horseGroup.attr('style', '');
     $betting.text('To bet on a horse, click on its name');
     $potentialReturn.text('');
+    $playerWallet.text('');
   });
 
 });
