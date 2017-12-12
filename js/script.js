@@ -335,7 +335,7 @@ $(() => {
     $('.horse8').animate({
       left: 1000
     }, {
-      duration: Math.floor(Math.random() * 900),
+      duration: Math.floor(Math.random() * 9000),
       step: function(now){
         $( '.horse6:gt(0)').css('left', now );
       }
