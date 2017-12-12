@@ -1,134 +1,322 @@
 console.log('JS loaded - fine');
 $(() => {
-  const $choice = $('.choice');
+
+  // Variables
+
+  const $horse = $('.choice');
+  const $odds = $('.odds');
   const $betting = $('.bet');
+  const $playerWallet = $('.playerWallet');
+  const $onePound = $('.onePound');
+  const $fivePound = $('.fivePound');
+  const $tenPound = $('.tenPound');
+  const $twentyPound = $('.twentyPound');
+  const $fiftyPound = $('.fiftyPound');
+  const $hundredPound = $('.hundredPound');
+  const $reset = $('.resetBet');
+  const $firstPlace = $('.firstPlace');
+  const $secondPlace = $('.secondPlace');
+  const $thirdPlace = $('.thirdPlace');
+  const $cashAvailable = $('.cashAvailable');
+  const $placeBet = $('.placeBet');
+  let $potentialReturn = $('.potentialReturn');
+  let winner = null;
+  let firstPlace = null;
+  let secondPlace = null;
+  let thirdPlace = null;
+  let $finalBet = $('.finalBet');
+  let betAmount = 0;
+  let finalBet = '';
+  let wallet = '250';
+  let horseChoice = null;
 
-  // function bet(e) {
-  //   const horseChoice = $(e.target).text();
-  //   $betting.text(horseChoice);
-  // }
+  // Betting area
 
-  $choice.on('click', (e) => {
-    console.log('hello');
-    const horseChoice = $(e.target).text();
+  $horse.on('click', (e) => {
+    horseChoice = $(e.target).html();
     $betting.text(horseChoice);
+    if (horseChoice === '1. Bullet-Proof: 3/1') {
+      $odds.text('Odds: 3/1');
+    } else if (horseChoice === '2. Emerald Fire: 5/1') {
+      $odds.text('Odds: 5/1');
+    } else if (horseChoice === '3. Jalapeno: 1/2') {
+      $odds.text('Odds: 1/2');
+    } else if (horseChoice === '4. Mischief: 7/1') {
+      $odds.text('Odds: 7/1');
+    } else if (horseChoice === '5. Please Baby: 10/1') {
+      $odds.text('Odds: 10/1');
+    } else if (horseChoice === '6. Rise to Glory: 4/1') {
+      $odds.text('Odds: 4/1');
+    } else if (horseChoice === '7. Tramp Time: 20/1') {
+      $odds.text('Odds: 20/1');
+    } else if (horseChoice === '8. Witch Craft: 9/1') {
+      $odds.text('Odds: 9/1');
+    }
   });
 
-});
-$(function() {
-  //run when the DOM is ready
 
-  var racetime = 9.58;
-  var racetimeMS = parseFloat(racetime * 1000) + 2000; // FOR JS DELAYS
-  var raceTimesArray = [];
+  $cashAvailable.text(250);
 
-  // RESET
-  reset();
-
-  // STARTER PISTOL
-  $('.pistol').click(function() {
-
-    $(this).queue("raceQueue", function(next) {
-
-      // SET UP TIMES AND STUFF
-      $('.runner').each(function(index) {
-        var randNum = (Math.floor(Math.random() * 100) / 30);
-        var runnerTime = (racetime + (1 * randNum)).toFixed(2);
-        var runnerID = (index + 1);
-        var runnerBundle = {
-          runnerNumber: runnerID,
-          runTime: runnerTime
-        };
-        $(this).css({
-          "transition-duration": (runnerTime + "s")
-        });
-        raceTimesArray.push(runnerBundle); // Push Times to Array
-
-      });
-
-      next();
-
-    }).queue("raceQueue", function(next) {
-
-      // RUNNING SECTION
-
-      // SET THE RUNNERS IN MOTION
-      $('#race').addClass('go');
-
-      // HEAD TO THE FINISH LINE
-      $('.runner').css({
-        "left": "96.3%"
-      });
-
-      // CHANGE THE MAIN TRIGGER
-      $(this).prop("disabled", true).addClass('running');
-
-      // Delay timer before next function
-      setTimeout(function() {
-        next();
-      }, racetimeMS);
-
-    }).queue("raceQueue", function(next) {
-
-      // WHEN THE RACE HAS FINISHED
-
-      // ORDER THE ARRAY INTO FASTEST TIMES
-      raceTimesArray.sort(function(a, b) {
-        return parseFloat(a.runTime) - parseFloat(b.runTime);
-      });
-
-      // PARSE ARRAY TO JSON
-      var raceTimesJSON = $.parseJSON(JSON.stringify(raceTimesArray));
-
-      // INJECT ARRAY DATA into HTML
-      // 1st
-      $('#result-1 .name').addClass('dude' + (raceTimesJSON[0].runnerNumber));
-      $('#result-1 .time').html((raceTimesJSON[0].runTime) + 's');
-
-      // 2nd
-      $('#result-2 .name').addClass('dude' + (raceTimesJSON[1].runnerNumber));
-      $('#result-2 .time').html((raceTimesJSON[1].runTime) + 's');
-
-      // 3rd
-      $('#result-3 .name').addClass('dude' + (raceTimesJSON[2].runnerNumber));
-      $('#result-3 .time').html((raceTimesJSON[2].runTime) + 's');
-
-      $('.window-reset').removeClass('hide').addClass('show');
-      $(this).prop("disabled", true);
-
-      next();
-
-    }).dequeue("raceQueue");
-
+  $onePound.on('click', (e)  => {
+    console.log('one');
+    betAmount = $(e.target).val();
+    console.log(betAmount);
+    $playerWallet.text(betAmount);
   });
 
-  // RESET FUNCTION
-  function reset() {
+  $fivePound.on('click', (e)  => {
+    console.log('five');
+    const betAmount = $(e.target).val();
+    $playerWallet.html(betAmount);
+  });
 
-    raceTimesArray.length = 0; // Empty Array
-    $('#result-list li .name').removeClass('dude1 dude2 dude3 dude4 dude5'); // remove classes
-    $('#result-list li .time').empty(); // remove content
-    $('.window-reset').removeClass('show').addClass('hide');
-    $('.pistol').prop("disabled", false).removeClass('running'); // Make it clickable
-    $('.runner').css({
-      "left": "1%",
-      "transition-duration": "0s"
+  $tenPound.on('click', (e)  => {
+    console.log('ten');
+    const betAmount = $(e.target).val();
+    $playerWallet.html(betAmount);
+  });
+
+  $twentyPound.on('click', (e)  => {
+    console.log('twenty');
+    const betAmount = $(e.target).val();
+    $playerWallet.html(betAmount);
+  });
+
+  $fiftyPound.on('click', (e)  => {
+    console.log('fifty');
+    const betAmount = $(e.target).val();
+    $playerWallet.html(betAmount);
+  });
+
+  $hundredPound.on('click', (e)  => {
+    console.log('hundred');
+    const betAmount = $(e.target).val();
+    $playerWallet.html(betAmount);
+  });
+
+  $reset.on('click', (e) => {
+    console.log('reset');
+    $playerWallet.html('Your bet: ');
+    $cashAvailable.html(250);
+    $betting.text('To bet on a horse, click on its name');
+    $finalBet.text = '';
+  });
+
+  $placeBet.on('click', (e) => {
+    console.log('bet placed');
+    const moneyLeft = $cashAvailable.html() - $playerWallet.html();
+    $cashAvailable.html(moneyLeft);
+    const horse = $betting.text();
+    if (horse === '1. Bullet-Proof: 3/1') {
+      $finalBet.text('Bullet-Proof');
+      $potentialReturn.html('Potential return ' + '£' + ($playerWallet.html() * 3));
+    } else if (horse === '2. Emerald Fire: 5/1') {
+      $finalBet.text('Emerald Fire');
+      $potentialReturn.html('Potential return ' + '£' + ($playerWallet.html() * 5));
+    } else if (horse === '3. Jalapeno: 1/2') {
+      $finalBet.text('Jalapeno');
+      $potentialReturn.html('Potential return ' + '£' + ($playerWallet.html() * .5));
+    } else if (horse === '4. Mischief: 7/1') {
+      $finalBet.text('Mischief');
+      $potentialReturn.html('Potential return ' + '£' + ($playerWallet.html() * 7));
+    } else if (horse === '5. Please Baby: 10/1') {
+      $finalBet.text('Please Baby');
+      $potentialReturn.html('Potential return ' + '£' + ($playerWallet.html() * 10));
+    } else if (horse === '6. Rise to Glory: 4/1') {
+      $finalBet.text('Rise to Glory');
+      $potentialReturn.html('Potential return ' + '£' + ($playerWallet.html() * 4));
+    } else if (horse === '7. Tramp Time: 20/1') {
+      $finalBet.text('Tramp Time');
+      $potentialReturn.html('Potential return ' + '£' + ($playerWallet.html() * 20));
+    } else if (horse === '8. Witch Craft: 9/1') {
+      $finalBet.text('Witch Craft');
+      $potentialReturn.html('Potential return ' + '£' + ($playerWallet.html() * 9));
+    }
+  });
+  // $potentialReturn.text($playerWallet.html() *  );
+
+
+  // Animation
+
+  $('#startRace').click(function() {
+    $('.horse1').animate({
+      left: 1000
+    }, {
+      duration: Math.floor(Math.random() * 9000),
+      step: function(now){
+        $( '.horse1:gt(0)').css('left', now );
+      }
+    }).promise().done(function (){
+      if(winner === null) {
+        winner = 'horse1';
+        $firstPlace.text('1st: Bullet-Proof !');
+      } else if (secondPlace === null) {
+        secondPlace = 'horse1';
+        $secondPlace.text('2nd: Bullet-Proof !');
+      } else if (thirdPlace === null) {
+        thirdPlace = 'horse1';
+        $thirdPlace.text('3rd: Bullet-Proof !');
+      }
     });
-  }
+  });
 
-  $('.reset').click(function() {
-    reset();
+  $('#startRace').click(function() {
+    $('.horse2').animate({
+      left: 1000
+    }, {
+      duration: Math.floor(Math.random() * 9000),
+      step: function(now){
+        $( '.horse2:gt(0)').css('left', now );
+      }
+    }).promise().done(function (){
+      if (winner === null) {
+        winner = 'horse2';
+        $firstPlace.text('1st: Emerald Fire !');
+      } else if (secondPlace === null)  {
+        secondPlace = 'horse2';
+        $secondPlace.text('2nd: Emerald Fire !');
+      } else if (thirdPlace === null) {
+        thirdPlace = 'horse2';
+        $thirdPlace.text('3rd: Emerald Fire !');
+      }
+    });
+  });
+
+  $('#startRace').click(function() {
+    $('.horse3').animate({
+      left: 1000
+    }, {
+      duration: Math.floor(Math.random() * 9000),
+      step: function(now){
+        $( '.horse3:gt(0)').css('left', now );
+      }
+    }).promise().done(function (){
+      if (winner === null) {
+        winner = 'horse3';
+        $firstPlace.text('1st: Jalapeno !');
+      } else if (secondPlace === null)  {
+        secondPlace = 'horse3';
+        $secondPlace.text('2nd: Jalapeno !');
+      } else if (thirdPlace === null) {
+        thirdPlace = 'horse3';
+        $thirdPlace.text('3rd: Jalapeno !');
+      }
+    });
+  });
+
+  $('#startRace').click(function() {
+    $('.horse4').animate({
+      left: 1000
+    }, {
+      duration: Math.floor(Math.random() * 9000),
+      step: function(now){
+        $( '.horse4:gt(0)').css('left', now );
+      }
+    }).promise().done(function (){
+      if (winner === null) {
+        winner = 'horse4';
+        $firstPlace.text('1st: Mischief !');
+      } else if (secondPlace === null) {
+        secondPlace = 'horse4';
+        $secondPlace.text('2nd: Mischief !');
+      } else if (thirdPlace === null) {
+        thirdPlace = 'horse4';
+        $thirdPlace.text('3rd: Mischief !');
+      }
+    });
+  });
+
+  $('#startRace').click(function() {
+    $('.horse5').animate({
+      left: 1000
+    }, {
+      duration: Math.floor(Math.random() * 9000),
+      step: function(now){
+        $( '.horse5:gt(0)').css('left', now );
+      }
+    }).promise().done(function (){
+      if (winner === null) {
+        winner = 'horse5';
+        $firstPlace.text('1st: Please Baby !');
+      } else if (secondPlace === null) {
+        secondPlace = 'horse5';
+        $secondPlace.text('2nd: Please Baby !');
+      } else if (thirdPlace === null) {
+        thirdPlace = 'horse5';
+        $thirdPlace.text('3rd: Please Baby !');
+      }
+    });
+  });
+
+  $('#startRace').click(function() {
+    $('.horse6').animate({
+      left: 1000
+    }, {
+      duration: Math.floor(Math.random() * 9000),
+      step: function(now){
+        $( '.horse6:gt(0)').css('left', now );
+      }
+    }).promise().done(function (){
+      if (winner === null) {
+        winner = 'horse6';
+        $firstPlace.text('1st: Rise to Glory !');
+      } else if (secondPlace === null) {
+        secondPlace = 'horse6';
+        $secondPlace.text('2nd: Rise to Glory !');
+      } else if (thirdPlace === null) {
+        thirdPlace = 'horse6';
+        $thirdPlace.text('3rd: Rise to Glory !');
+      }
+    });
+  });
+
+  $('#startRace').click(function() {
+    $('.horse7').animate({
+      left: 1000
+    }, {
+      duration: Math.floor(Math.random() * 9000),
+      step: function(now){
+        $( '.horse6:gt(0)').css('left', now );
+      }
+    }).promise().done(function (){
+      if (winner === null) {
+        winner = 'horse7';
+        $firstPlace.text('1st: Tramp Time !');
+      } else if (secondPlace === null) {
+        secondPlace = 'horse7';
+        $secondPlace.text('2nd: Time Tramp !');
+      } else if (thirdPlace === null) {
+        thirdPlace = 'horse7';
+        $thirdPlace.text('3rd: Time Tramp !');
+      }
+    });
+  });
+
+  $('#startRace').click(function() {
+    $('.horse8').animate({
+      left: 1000
+    }, {
+      duration: Math.floor(Math.random() * 900),
+      step: function(now){
+        $( '.horse6:gt(0)').css('left', now );
+      }
+    }).promise().done(function (){
+      if (winner === null) {
+        winner = 'horse8';
+        $firstPlace.text('1st: Witch Craft !');
+      } else if (secondPlace === null) {
+        secondPlace = 'horse8';
+        $secondPlace.text('2nd: Witch Craft !');
+      } else if (thirdPlace === null) {
+        thirdPlace = 'horse8';
+        $thirdPlace.text('3rd: Witch Craft !');
+      }
+    });
+  });
+  // Restart buttons
+
+  $('#startAgain').click(function() {
+    location.reload();
   });
 
 });
-//
-// const $button = $('.choice');
-// const $player1textarea = $('.player1');
-// $button.on('click', (e) => {
-//   const player1choice = $(e.target).html();
-//   $player1textarea.text(player1choice);
-// const $button = $('.choice');
-// const $player1textarea = $('.player1');
-// $button.on('click', (e) => {
-//   const player1choice = $(e.target).html();
-//   $player1textarea.text(player1choice);
