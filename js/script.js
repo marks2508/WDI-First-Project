@@ -1,6 +1,8 @@
 console.log('JS loaded - fine');
 $(() => {
 
+  // Variables
+
   const $horse = $('.choice');
   const $odds = $('.odds');
   const $betting = $('.bet');
@@ -23,12 +25,33 @@ $(() => {
   let thirdPlace = null;
   const $finalBet = $('.finalBet');
   let betAmount = 0;
+  let finalBet = '';
+  let wallet = '250';
+  // Betting area
 
   $horse.on('click', (e) => {
     console.log('hello');
     const horseChoice = $(e.target).html();
     $betting.text(horseChoice);
+    if (horseChoice === '1. Bullet-Proof: 3/1') {
+      $odds.text('3/1');
+    } else if (horseChoice === '2. Emerald Fire: 5/1') {
+      $odds.text('5/1');
+    } else if (horseChoice === '3. Jalapeno: 1/2') {
+      $odds.text('1/2');
+    } else if (horseChoice === '4. Mischief: 7/1') {
+      $odds.text('7/1');
+    } else if (horseChoice === '5. Please Baby: 10/1') {
+      $odds.text('10/1');
+    } else if (horseChoice === '6. Rise to Glory: 4/1') {
+      $odds.text('4/1');
+    } else if (horseChoice === '7. Tramp Time: 20/1') {
+      $odds.text('20/1');
+    } else if (horseChoice === '8. Witch Craft: 9/1') {
+      $odds.text('9/1');
+    }
   });
+
 
   $cashAvailable.text(250);
 
@@ -86,9 +109,7 @@ $(() => {
     $finalBet.text(horse);
   });
 
-  if ($resultArray === $finalBet) {
-    console.log('peace');
-  }
+  // Animation
 
   $('#go').click(function() {
     $('.horse1').animate({
@@ -276,6 +297,8 @@ $(() => {
   // } else if (console.log() === 5) {
   //   $result.text = '5 won';
   // }
+
+  // Restart buttons
 
   $('#startAgain').click(function() {
     location.reload();
