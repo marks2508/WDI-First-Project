@@ -14,14 +14,14 @@ $(() => {
   const $fiftyPound = $('.fiftyPound');
   const $hundredPound = $('.hundredPound');
   const $reset = $('.resetBet');
+  const $firstPlace = $('.firstPlace');
   const $secondPlace = $('.secondPlace');
   const $thirdPlace = $('.thirdPlace');
   const $cashAvailable = $('.cashAvailable');
   const $placeBet = $('.placeBet');
-  const $resultDisplayArea = $('.result');
-  const $resultArray = $('.results');
   let $potentialReturn = $('.potentialReturn');
   let winner = null;
+  let firstPlace = null;
   let secondPlace = null;
   let thirdPlace = null;
   let $finalBet = $('.finalBet');
@@ -148,7 +148,7 @@ $(() => {
     }).promise().done(function (){
       if(winner === null) {
         winner = 'horse1';
-        $resultArray.text('1st: Bullet-Proof !');
+        $firstPlace.text('1st: Bullet-Proof !');
       } else if (secondPlace === null) {
         secondPlace = 'horse1';
         $secondPlace.text('2nd: Bullet-Proof !');
@@ -170,7 +170,7 @@ $(() => {
     }).promise().done(function (){
       if(winner === null) {
         winner = 'horse2';
-        $resultArray.text('1st: Emerald Fire !');
+        $firstPlace.text('1st: Emerald Fire !');
       } else if (secondPlace === null)  {
         secondPlace = 'horse2';
         $secondPlace.text('2nd: Emerald Fire !');
@@ -192,7 +192,7 @@ $(() => {
     }).promise().done(function (){
       if(winner === null) {
         winner = 'horse3';
-        $resultArray.text('1st: Jalapeno !');
+        $firstPlace.text('1st: Jalapeno !');
       } else if (secondPlace === null)  {
         secondPlace = 'horse3';
         $secondPlace.text('2nd: Jalapeno !');
@@ -214,7 +214,7 @@ $(() => {
     }).promise().done(function (){
       if(winner === null) {
         winner = 'horse4';
-        $resultArray.text('1st: Mischief !');
+        $firstPlace.text('1st: Mischief !');
       } else if (secondPlace === null) {
         secondPlace = 'horse4';
         $secondPlace.text('2nd: Mischief !');
@@ -236,7 +236,7 @@ $(() => {
     }).promise().done(function (){
       if(winner === null) {
         winner = 'horse5';
-        $resultArray.text('1st: Please Baby !');
+        $firstPlace.text('1st: Please Baby !');
       } else if (secondPlace === null) {
         secondPlace = 'horse5';
         $secondPlace.text('2nd: Please Baby !');
@@ -258,7 +258,7 @@ $(() => {
     }).promise().done(function (){
       if(winner === null) {
         winner = 'horse6';
-        $resultArray.text('1st: Rise to Glory !');
+        $firstPlace.text('1st: Rise to Glory !');
       } else if (secondPlace === null) {
         secondPlace = 'horse6';
         $secondPlace.text('2nd: Rise to Glory !');
@@ -280,7 +280,7 @@ $(() => {
     }).promise().done(function (){
       if(winner === null) {
         winner = 'horse7';
-        $resultArray.text('1st: Tramp Time !');
+        $firstPlace.text('1st: Tramp Time !');
       } else if (secondPlace === null) {
         secondPlace = 'horse7';
         $secondPlace.text('2nd: Time Tramp !');
@@ -295,14 +295,14 @@ $(() => {
     $('.horse8').animate({
       left: 1000
     }, {
-      duration: Math.floor(Math.random() * 9000),
+      duration: Math.floor(Math.random() * 900),
       step: function(now){
         $( '.horse6:gt(0)').css('left', now );
       }
     }).promise().done(function (){
       if(winner === null) {
         winner = 'horse8';
-        $resultArray.text('1st: Witch Craft !');
+        $firstPlace.text('1st: Witch Craft !');
       } else if (secondPlace === null) {
         secondPlace = 'horse8';
         $secondPlace.text('2nd: Witch Craft !');
@@ -312,17 +312,26 @@ $(() => {
       }
     });
   });
-  // if (console.log() === 1){
-  //   $result.text = '1 won';
-  // } else if (console.log() === 2) {
-  //   $result.text = '2 won';
-  // } else if (console.log() === 3) {
-  //   $result.text = '3 won';
-  // } else if (console.log() ===4) {
-  //   $result.text = '4 won';
-  // } else if (console.log() === 5) {
-  //   $result.text = '5 won';
-  // }
+
+  if ($firstPlace.text === '1st: Bullet-Proof !' && $finalBet.text === 'Bullet Proof') {
+    console.log('bullet');
+  } else if ($firstPlace.text === '1st: Emerald Fire !' && $finalBet.text === 'Emerald Fire') {
+    console.log('emerald');
+  } else if ($firstPlace.text === '1st: Jalapeno !' && $finalBet.text === 'Jalapeno') {
+    console.log('Jalapeno');
+  } else if ($firstPlace.text === '1st: Mischief !' && $finalBet.text === 'Mischief') {
+    console.log('mischief');
+  } else if ($firstPlace.text === '1st: Please Baby !' && $finalBet.text === 'Please Baby') {
+    console.log('please baby');
+  } else if ($firstPlace.text === '1st: Rise to Glory !' && $finalBet.text === 'Rise to Glory') {
+    console.log('rise');
+  } else if ($firstPlace.text === '1st: Time Tramp !' && $finalBet.text === 'Time Tramp') {
+    console.log('tramp');
+  } else if ($firstPlace.text() === '1st: Witch Craft !' && $finalBet === 'Witch Craft') {
+    console.log(firs);
+  }
+
+
 
   // Restart buttons
 
