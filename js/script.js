@@ -111,44 +111,44 @@ $(() => {
     if (horse === '1. Bullet-Proof: 3/1') {
       $finalBet.text('Bullet-Proof');
       horseChoice = 'Bullet-Proof';
-      $potentialReturn.html('Potential return ' + '£' + ($playerWallet.html() * 3));
+      $potentialReturn.html($playerWallet.html() * 3);
     } else if (horse === '2. Emerald Fire: 5/1') {
       horseChoice = 'Emerald Fire';
       $finalBet.text('Emerald Fire');
-      $potentialReturn.html('Potential return ' + '£' + ($playerWallet.html() * 5));
+      $potentialReturn.html($playerWallet.html() * 5);
     } else if (horse === '3. Jalapeno: 1/2') {
       horseChoice = 'Jalapeno';
       $finalBet.text('Jalapeno');
-      $potentialReturn.html('Potential return ' + '£' + ($playerWallet.html() * .5));
+      $potentialReturn.html($playerWallet.html() * .5);
     } else if (horse === '4. Mischief: 7/1') {
       horseChoice = 'Mischief';
       $finalBet.text('Mischief');
-      $potentialReturn.html('Potential return ' + '£' + ($playerWallet.html() * 7));
+      $potentialReturn.html($playerWallet.html() * 7);
     } else if (horse === '5. Please Baby: 10/1') {
       horseChoice = 'Please Baby';
       $finalBet.text('Please Baby');
-      $potentialReturn.html('Potential return ' + '£' + ($playerWallet.html() * 10));
+      $potentialReturn.html($playerWallet.html() * 10);
     } else if (horse === '6. Rise to Glory: 4/1') {
       horseChoice = 'Rise to Glory';
       $finalBet.text('Rise to Glory');
-      $potentialReturn.html('Potential return ' + '£' + ($playerWallet.html() * 4));
+      $potentialReturn.html($playerWallet.html() * 4);
     } else if (horse === '7. Tramp Time: 20/1') {
       horseChoice = 'Tramp Time';
       $finalBet.text('Tramp Time');
-      $potentialReturn.html('Potential return ' + '£' + ($playerWallet.html() * 20));
+      $potentialReturn.html($playerWallet.html() * 20);
     } else if (horse === '8. Witch Craft: 9/1') {
       horseChoice = 'Witch Craft';
       $finalBet.text('Witch Craft');
-      $potentialReturn.html('Potential return ' + '£' + ($playerWallet.html() * 9));
+      $potentialReturn.html($playerWallet.html() * 9);
     }
   });
 
   function checkWinner() {
     if (horseChoice === winner) {
       alert('You have a winner');
+      $potentialReturn = $potentialReturn.html() + $playerWallet.html();      
     }
   }
-
   // Animation
 
   $('#startRace').click(function() {
