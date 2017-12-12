@@ -119,7 +119,7 @@ $(() => {
       horseChoice = 'Bullet-Proof';
       $finalBet.text('Bullet-Proof');
       $cashAvailable.text('You have £' + (wallet - $playerWallet.text()));
-      $potentialReturn.text($playerWallet.html() * 3);
+      $potentialReturn.text('Return: ' + $playerWallet.html() * 3);
       console.log(4);
     } else if (horse === '2. Emerald Fire: 5/1') {
       horseChoice = 'Emerald Fire';
@@ -161,9 +161,10 @@ $(() => {
 
   function checkWinner() {
     if (horseChoice === winner) {
-      alert('You have a winner');
+      alert('You have a winner!');
       $cashAvailable.text((parseInt($playerWallet.text()) + parseInt($potentialReturn.text()) + parseInt(wallet)));
     } else {
+      alert('Unlucky, keeping gambling!');
       $cashAvailable.text((parseInt(wallet)) - (parseInt($playerWallet.text())));
     }
   }
@@ -357,7 +358,7 @@ $(() => {
   $('#startAgain').on('click', () => {
     $horseGroup.attr('style', '');
     $betting.text('To bet on a horse, click on its name');
-    $potentialReturn.text('');
+    $potentialReturn.text('Return: £ ');
     $playerWallet.text('');
   });
 
