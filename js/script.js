@@ -162,14 +162,16 @@ $(() => {
   function checkWinner() {
     if (horseChoice === winner) {
       alert('You have a winner! Keep gambling...');
-      $cashAvailable.text(wallet + parseInt($potentialReturn.text()));
+      wallet = wallet + parseInt($potentialReturn.text());
+      $cashAvailable.text(wallet);
       $betting.text('To bet on a horse, click on its name');
       $potentialReturn.text('');
       $playerWallet.text('');
       $odds.text('The odds: ');
     } else {
       alert('Unlucky. But luckily, you can still gamble...');
-      $cashAvailable.text(wallet - $playerWallet.text());
+      wallet = wallet - parseInt($playerWallet.text());
+      $cashAvailable.text(wallet);
       $betting.text('To bet on a horse, click on its name');
       $potentialReturn.text('');
       $playerWallet.text('');
