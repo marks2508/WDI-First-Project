@@ -111,7 +111,6 @@ $(() => {
     $betting.text('To bet on a horse, click on its name');
     $finalBet.text = '';
   });
-
   $placeBet.on('click', (e) => {
     console.log('bet placed');
     const horse = $betting.text();
@@ -157,6 +156,7 @@ $(() => {
       $cashAvailable.text(wallet - $playerWallet.text());
       $potentialReturn.html($playerWallet.html() * 9);
     }
+
   });
 
   function checkWinner() {
@@ -367,18 +367,24 @@ $(() => {
   // Restart buttons
 
   $('#startAgain').on('click', () => {
-    $horseGroup.attr('style', '');
-    $betting.text('To bet on a horse, click on its name');
-    $potentialReturn.text('');
-    $playerWallet.text('');
-    $odds.text('The odds: ');
-    $firstPlace.text('1st: ');
-    secondPlace = null;
-    $secondPlace.text('2nd: ');
-    $thirdPlace.text('3rd: ');
-    thirdPlace = null;
-    $finalBet.text('Your bet: ');
-    winner = null;
+    if (wallet > 0){
+      $horseGroup.attr('style', '');
+      $betting.text('To bet on a horse, click on its name');
+      $potentialReturn.text('');
+      $playerWallet.text('');
+      $odds.text('The odds: ');
+      $firstPlace.text('1st: ');
+      secondPlace = null;
+      $secondPlace.text('2nd: ');
+      $thirdPlace.text('3rd: ');
+      thirdPlace = null;
+      $finalBet.text('Your bet: ');
+      winner = null;
+    } else {
+      alert('Sorry, you have no cash left \nGAME OVER');
+      window.location = 'index.html';
+
+    }
   });
 
 });
