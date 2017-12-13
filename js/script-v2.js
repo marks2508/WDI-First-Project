@@ -25,8 +25,13 @@ $(() => {
   let firstPlace = null;
   let secondPlace = null;
   let thirdPlace = null;
+  let fourthPlace = null;
+  let fifthPlace = null;
+  let sixthPlace = null;
+  let seventhPlace = null;
+  let eighthPlace = null;
 
-  const $playerWallet = $('.playerWallet');
+  let $playerWallet = $('.playerWallet');
   let $finalBet = $('.finalBet');
   let betAmount = 0;
   let finalBet = '';
@@ -172,10 +177,10 @@ $(() => {
   }
   function resultDisplay() {
     setTimeout(function() {
-      alert('Results are in:\n\nIn the end' + $secondPlace.text() + 'world');
-      checkWinner()
+      alert('Results are in:\n\n1st: ' + firstPlace + '\n2nd: ' + secondPlace + '\n3rd: ' + thirdPlace + '\n4th: ' + fourthPlace + '\n5th: ' + fifthPlace + '\n6th: ' + sixthPlace + '\n7th: ' + seventhPlace + '\n8nd: ' + eighthPlace);
+      checkWinner();
       startAgain();
-    }, 6000);
+    }, 5432);
   }
 
   const horseNames = ['cliff', 'Mark', 'Gerry', 'Ben', 'steve', 'john', 'bill','bob'];
@@ -198,9 +203,17 @@ $(() => {
         } else if (thirdPlace === null) {
           thirdPlace = 'horse'+i;
           $thirdPlace.text('3rd: ' + horseNames[i] + ' !');
+        } else if (fourthPlace === null) {
+          fourthPlace = 'hourse'+i;
+        } else if (fifthPlace === null) {
+          fifthPlace = 'hourse'+i;
+        } else if (sixthPlace === null) {
+          sixthPlace = 'horse'+i;
+        } else if (seventhPlace === null) {
+          seventhPlace = 'horse'+i;
+        } else if (eighthPlace === null) {
+          eighthPlace = 'horse'+i;
           resultDisplay();
-          // checkWinner();
-          console.log('test5');
         }
       });
     }
