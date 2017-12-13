@@ -9,7 +9,8 @@ $(() => {
   const $horseGroup = $('.horse-group');
 
   const $betButtons = $('.betButton');
-
+  const $startRace = $('.startRace');
+  const $startAgain = $('.startAgain');
   const $reset = $('.resetBet');
 
   const $firstPlace = $('.firstPlace');
@@ -86,43 +87,43 @@ $(() => {
       horseChoice = 'Bullet-Proof';
       $finalBet.text('Bullet-Proof');
       $cashAvailable.text(wallet - betAmount);
-      $potentialReturn.text('£' + betAmount * 3);
+      $potentialReturn.text(betAmount * 3);
       console.log(4);
     } else if (horse === '2. Emerald Fire: 5/1') {
       horseChoice = 'Emerald Fire';
       $finalBet.text('Emerald Fire');
       $cashAvailable.text(wallet - betAmount);
-      $potentialReturn.html('£' + betAmount * 5);
+      $potentialReturn.html(betAmount * 5);
     } else if (horse === '3. Jalapeno: 1/2') {
       horseChoice = 'Jalapeno';
       $finalBet.text('Jalapeno');
       $cashAvailable.text(wallet - betAmount);
-      $potentialReturn.html('£' + betAmount * .5);
+      $potentialReturn.html(betAmount * .5);
     } else if (horse === '4. Mischief: 7/1') {
       horseChoice = 'Mischief';
       $finalBet.text('Mischief');
       $cashAvailable.text(wallet - betAmount);
-      $potentialReturn.html('£' + betAmount * 7);
+      $potentialReturn.html(betAmount * 7);
     } else if (horse === '5. Please Baby: 10/1') {
       horseChoice = 'Please Baby';
       $finalBet.text('Please Baby');
       $cashAvailable.text(wallet - betAmount);
-      $potentialReturn.html('£' + betAmount * 10);
+      $potentialReturn.html(betAmount * 10);
     } else if (horse === '6. Rise to Glory: 4/1') {
       horseChoice = 'Rise to Glory';
       $finalBet.text('Rise to Glory');
       $cashAvailable.text(wallet - betAmount);
-      $potentialReturn.html('£' + betAmount * 4);
+      $potentialReturn.html(betAmount * 4);
     } else if (horse === '7. Tramp Time: 20/1') {
       horseChoice = 'Tramp Time';
       $finalBet.text('Tramp Time');
       $cashAvailable.text(wallet - betAmount);
-      $potentialReturn.html('£' + betAmount * 20);
+      $potentialReturn.html(betAmount * 20);
     } else if (horse === '8. Witch Craft: 9/1') {
       horseChoice = 'Witch Craft';
       $finalBet.text('Witch Craft');
       $cashAvailable.text(wallet - betAmount);
-      $potentialReturn.html('£' + betAmount * 9);
+      $potentialReturn.html(betAmount * 9);
     }
   });
 
@@ -135,6 +136,7 @@ $(() => {
       $potentialReturn.text('');
       $playerWallet.text('');
       $odds.text('The odds: ');
+      startAgain();
     } else {
       alert('Unlucky. But luckily, you can still gamble...');
       wallet = wallet - parseInt(betAmount);
@@ -144,10 +146,32 @@ $(() => {
       $playerWallet.text('');
       $odds.text('The odds: ');
       alert('please press next race, and then start race once you have placed a bet');
+      startAgain();
     }
   }
+  
+  function startAgain () {
+    if (wallet > 0){
+      $horseGroup.attr('style', '');
+      $betting.text('To bet on a horse, click on its name');
+      $potentialReturn.text('');
+      $playerWallet.text('');
+      $odds.text('The odds: ');
+      $firstPlace.text('1st: ');
+      secondPlace = null;
+      $secondPlace.text('2nd: ');
+      $thirdPlace.text('3rd: ');
+      thirdPlace = null;
+      $finalBet.text('Your bet: ');
+      winner = null;
+    } else {
+      alert('Sorry, you have no cash left \nGAME OVER');
+      window.location = 'index.html';
+    }
+  }
+
   // Animation
-  $('#startRace').click(function() {
+  $('.startRace').click(function() {
     $('.horse1').animate({
       left: '90%'
     }, {
@@ -171,7 +195,7 @@ $(() => {
   });
 
 
-  $('#startRace').click(function() {
+  $('.startRace').click(function() {
     $('.horse2').animate({
       left: '90%'
     }, {
@@ -195,7 +219,7 @@ $(() => {
   });
 
 
-  $('#startRace').click(function() {
+  $('.startRace').click(function() {
     $('.horse3').animate({
       left: '90%'
     }, {
@@ -218,7 +242,7 @@ $(() => {
     });
   });
 
-  $('#startRace').click(function() {
+  $('.startRace').click(function() {
     $('.horse4').animate({
       left: '90%'
     }, {
@@ -241,7 +265,7 @@ $(() => {
     });
   });
 
-  $('#startRace').click(function() {
+  $('.startRace').click(function() {
     $('.horse5').animate({
       left: '90%'
     }, {
@@ -265,7 +289,7 @@ $(() => {
   });
 
 
-  $('#startRace').click(function() {
+  $('.startRace').click(function() {
     $('.horse6').animate({
       left: '90%'
     }, {
@@ -288,7 +312,7 @@ $(() => {
     });
   });
 
-  $('#startRace').click(function() {
+  $('.startRace').click(function() {
     $('.horse7').animate({
       left: '90%'
     }, {
@@ -312,7 +336,7 @@ $(() => {
   });
 
 
-  $('#startRace').click(function() {
+  $('.startRace').click(function() {
     $('.horse8').animate({
       left: '90%'
     }, {
@@ -338,25 +362,7 @@ $(() => {
 
   // Restart buttons
 
-  $('#startAgain').on('click', () => {
-    if (wallet > 0){
-      $horseGroup.attr('style', '');
-      $betting.text('To bet on a horse, click on its name');
-      $potentialReturn.text('');
-      $playerWallet.text('');
-      $odds.text('The odds: ');
-      $firstPlace.text('1st: ');
-      secondPlace = null;
-      $secondPlace.text('2nd: ');
-      $thirdPlace.text('3rd: ');
-      thirdPlace = null;
-      $finalBet.text('Your bet: ');
-      winner = null;
-    } else {
-      alert('Sorry, you have no cash left \nGAME OVER');
-      window.location = 'index.html';
 
-    }
-  });
+
 
 });

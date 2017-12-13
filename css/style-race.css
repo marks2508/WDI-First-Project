@@ -5,7 +5,6 @@ body {
 main {
   max-width: 1200px;
   margin: 0 auto;
-  background-image: url('./images/background-1.jpg');
 }
 
 h1 {
@@ -104,7 +103,7 @@ h1 {
 form {
   display: flex;
   font-family: 'Racing Sans One', cursive;
-  background-color: red;
+  background-color: lightgreen;
   border: 2px solid green;
   border-radius: 25px;
   width: 180px;
@@ -140,7 +139,7 @@ li {
 .horseresults p {
   font-family: 'Racing Sans One'; cursive;
   text-shadow: .5px  blue;
-  background: red;
+  background: lightblue;
   margin: 0 10px;
   padding: 8px;
   border-radius: 25px;
@@ -155,12 +154,18 @@ a {
   font-size: 25px;
 }
 .race {
-  background-image: url('./images/resized-turf.jpg');
+  background-image: url('/Users/mark/development/first-app/images/resized-turf.jpg');
   position: relative;
   /* top: 595px; */
 }
 button {
   font-family: 'Racing Sans One', cursive;
+  display: flex;
+  justify-content: center;
+}
+#startRace {
+  display: flex;
+  justify-content: center;
 }
 
 /* .race-buttons {
