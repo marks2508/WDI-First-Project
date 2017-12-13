@@ -5,6 +5,7 @@ body {
 main {
   max-width: 1200px;
   margin: 0 auto;
+  background-image: url('./images/background-1.jpg');
 }
 
 h1 {
@@ -154,6 +155,7 @@ a {
   font-size: 25px;
 }
 .race {
+  background-image: url('./images/resized-turf.jpg');
   position: relative;
   /* top: 595px; */
 }
