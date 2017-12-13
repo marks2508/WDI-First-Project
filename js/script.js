@@ -274,7 +274,6 @@ $(() => {
     });
   });
 
-
   $('#startRace').click(function() {
     $('.horse5').animate({
       left: 1000
@@ -297,7 +296,6 @@ $(() => {
       }
     });
   });
-
 
 
   $('#startRace').click(function() {
@@ -369,6 +367,7 @@ $(() => {
       }
     });
   });
+
 
   // Restart buttons
 
