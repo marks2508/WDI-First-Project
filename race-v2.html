@@ -1,96 +1,109 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <title> And they're off! </title>
-    <link href="https://fonts.googleapis.com/css?family=Racing+Sans+One" rel="stylesheet">
-    <link rel="stylesheet" href="css/animate.css">
-    <link rel="stylesheet" href="./css/style-race.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-    <script src="js/script.js" charset="utf-8"></script>
-  </head>
-  <body>
-    <img src="./images/background-1.jpg" class="background">
+<head>
+  <meta charset="utf-8">
+  <title> And they're off! </title>
+  <link href="https://fonts.googleapis.com/css?family=Racing+Sans+One" rel="stylesheet">
+  <link rel="stylesheet" href="css/animate.css">
+  <link rel="stylesheet" href="./css/style-race.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+  <script src="js/script.js" charset="utf-8"></script>
+</head>
+<body>
+  <main>
+    <!-- <img src="./images/background-1.jpg" class="background"> -->
     <h1 class="header">And They're Off!</h1>
-  <ul>
-    <li class="choice">1. Bullet-Proof: 3/1</li>
-    <li class="choice">2. Emerald Fire: 5/1</li>
-    <li class="choice">3. Jalapeno: 1/2</li>
-    <li class="choice">4. Mischief: 7/1</li>
-    <li class="choice">5. Please Baby: 10/1</li>
-    <li class="choice">6. Rise to Glory: 4/1</li>
-    <li class="choice">7. Tramp Time: 20/1</li>
-    <li class="choice">8. Witch Craft: 9/1</li>
-    <li class="firstPlace">1st: </li>
-    <li class="secondPlace">2nd: </li>
-    <li class="thirdPlace">3rd: </li>
-    <li class="finalBet">Your bet: </li>
-  </ul>
-  <form name="total">
-    <table>
-      <tr>
-        <td colspan="2">
-          <p class="bet">To bet on a horse, click on its name</p>
-          <p class="playerWallet"></p>
-          <p class="odds"></p>
-          <p class="cashAvailable"></p>
-          <p class="potentialReturn"></P>
-        </td>
-      </tr>
-      <tr>
-        <td><input type="button" name="one" class="onePound" value=1></td>
-        <td><input type="button" name="twenty" class="twentyPound" value=20></td>
-      </tr>
-      <tr>
-        <td><input type="button" name="four" class="fivePound" value=5></td>
-        <td><input type="button" name="five" class="fiftyPound" value=50></td>
-      </tr>
-      <tr>
-        <td><input type="button" name="seven" class="tenPound" value=10></td>
-        <td><input type="button" name="eight" class="hundredPound" value=100></td>
-      </tr>
-      <tr>
-        <!-- <td><input type="button" name="clear" class="resetBet" value="Resest"></td> -->
-        <td><input type="button" name="zero" class="placeBet" value="Place Bet"></td>
-      </tr>
-    </table>
-  </form>
-  <div class="race">
-    <div class="horse1 horse-group">
-      <img src="./images/animated-horse.jpg" width="30" height="30" class="horse1">
+
+    <!-- results -->
+    <div class="horseresults">
+      <p class="firstPlace">1st: </p>
+      <p class="secondPlace">2nd: </p>
+      <p class="thirdPlace">3rd: </p>
+      <p class="finalBet">Your bet: </p>
     </div>
-    <div class="horse2 horse-group">
-      <img src="./images/animated-horse.jpg" width="30" height="30" class="horse2">
+
+    <!-- buttons -->
+    <div class="race-buttons">
+      <p><button id='startRace'>Start race</button></p>
+      <p><button id='startAgain'>Next race</button></p>
     </div>
-    <div class="horse3 horse-group">
-      <img src="./images/animated-horse.jpg" width="30" height="30" class="horse3">
-    </div>
-    <div class="horse4 horse-group">
-      <img src="./images/animated-horse.jpg" width="30" height="30" class="horse4">
-    </div>
-    <div class="horse5 horse-group">
-      <img src="./images/animated-horse.jpg" width="30" height="30" class="horse5">
-    </div>
-    <div class="horse6 horse-group">
-      <img src="./images/animated-horse.jpg" width="30" height="30" class="horse6">
-    </div>
-    <div class="horse7 horse-group">
-      <img src="./images/animated-horse.jpg" width="30" height="30" class="horse7">
-    </div>
-    <div class="horse8 horse-group">
-      <img src="./images/animated-horse.jpg" width="30" height="30" class="horse8">
-    </div>
-    <!-- <div class="horse2">2</div>
-    <div class="horse3">3</div>
-    <div class="horse4">4</div>
-    <div class="horse5">5</div>
-    <div class="horse6">6</div>
-    <div class="horse7">7</div>
-    <div class="horse8">8</div> -->
-  </div>
-  <div class="race-buttons">
-    <p><button id='startRace'>Start race</button></p>
-    <p><button id='startAgain'>Next race</button></p>
-  </div>
+
+    <div class="main-area">
+      <ul>
+        <li class="choice">1. Bullet-Proof: 3/1</li>
+        <li class="choice">2. Emerald Fire: 5/1</li>
+        <li class="choice">3. Jalapeno: 1/2</li>
+        <li class="choice">4. Mischief: 7/1</li>
+        <li class="choice">5. Please Baby: 10/1</li>
+        <li class="choice">6. Rise to Glory: 4/1</li>
+        <li class="choice">7. Tramp Time: 20/1</li>
+        <li class="choice">8. Witch Craft: 9/1</li>
+      </ul>
+
+      <div class="race">
+        <div class="horse1 horse-group">
+          <img src="./images/animated-horse.jpg" width="30" height="30" class="horse1">
+        </div>
+        <div class="horse2 horse-group">
+          <img src="./images/animated-horse.jpg" width="30" height="30" class="horse2">
+        </div>
+        <div class="horse3 horse-group">
+          <img src="./images/animated-horse.jpg" width="30" height="30" class="horse3">
+        </div>
+        <div class="horse4 horse-group">
+          <img src="./images/animated-horse.jpg" width="30" height="30" class="horse4">
+        </div>
+        <div class="horse5 horse-group">
+          <img src="./images/animated-horse.jpg" width="30" height="30" class="horse5">
+        </div>
+        <div class="horse6 horse-group">
+          <img src="./images/animated-horse.jpg" width="30" height="30" class="horse6">
+        </div>
+        <div class="horse7 horse-group">
+          <img src="./images/animated-horse.jpg" width="30" height="30" class="horse7">
+        </div>
+        <div class="horse8 horse-group">
+          <img src="./images/animated-horse.jpg" width="30" height="30" class="horse8">
+        </div>
+        <!-- <div class="horse2">2</div>
+        <div class="horse3">3</div>
+        <div class="horse4">4</div>
+        <div class="horse5">5</div>
+        <div class="horse6">6</div>
+        <div class="horse7">7</div>
+        <div class="horse8">8</div> -->
+      </div>
+
+      <form name="total">
+        <table>
+          <tr>
+            <td colspan="2">
+              <p class="bet">To bet on a horse, click on its name</p>
+              <p>Your bet: <span class="playerWallet"></span></p>
+              <p class="odds">Odds:</p>
+              <p class="cashAvailable">Your cash</p>
+              <p class="potentialReturn"></p>
+              </td>
+            </tr>
+            <tr>
+              <td><input type="button" name="one" class="betButton onePound" value=£1></td>
+              <td><input type="button" name="twenty" class="betButton twentyPound" value=20></td>
+            </tr>
+            <tr>
+              <td><input type="button" name="four" class="betButton fivePound" value=5></td>
+              <td><input type="button" name="five" class="betButton fiftyPound" value=50></td>
+            </tr>
+            <tr>
+              <td><input type="button" name="seven" class="betButton tenPound" value=10></td>
+              <td><input type="button" name="eight" class="betButton hundredPound" value=100></td>
+            </tr>
+            <tr>
+              <!-- <td><input type="button" name="clear" class="resetBet" value="Resest"></td> -->
+              <td><input type="button" name="zero" class="placeBet" value="Place Bet"></td>
+            </tr>
+          </table>
+        </form>
+      </div>
+    </main>
   </body>
-</html>
+  </html>
