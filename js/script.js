@@ -104,13 +104,14 @@ $(() => {
     $playerWallet.html(betAmount);
   });
 
-  $reset.on('click', (e) => {
-    console.log('reset');
-    $playerWallet.html('Your bet: ');
-    $cashAvailable.html(250);
-    $betting.text('To bet on a horse, click on its name');
-    $finalBet.text = '';
-  });
+  // $reset.on('click', (e) => {
+  //   console.log('reset');
+  //   $playerWallet.html('Your bet: ');
+  //   $cashAvailable.html(250);
+  //   $betting.text('To bet on a horse, click on its name');
+  //   $finalBet.text = '';
+  // });
+
   $placeBet.on('click', (e) => {
     console.log('bet placed');
     const horse = $betting.text();
@@ -156,7 +157,6 @@ $(() => {
       $cashAvailable.text(wallet - $playerWallet.text());
       $potentialReturn.html($playerWallet.html() * 9);
     }
-
   });
 
   function checkWinner() {
@@ -180,7 +180,7 @@ $(() => {
     }
   }
   // Animation
-
+  
   $('#startRace').click(function() {
     $('.horse1').animate({
       left: 1000
