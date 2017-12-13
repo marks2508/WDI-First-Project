@@ -5,32 +5,41 @@ $(() => {
 
   const $horse = $('.choice');
   const $odds = $('.odds');
-  const $betting = $('.bet');
-  const $playerWallet = $('.playerWallet');
+  let $betting = $('.bet');
+  const $horseGroup = $('.horse-group');
+
   const $onePound = $('.onePound');
   const $fivePound = $('.fivePound');
   const $tenPound = $('.tenPound');
   const $twentyPound = $('.twentyPound');
   const $fiftyPound = $('.fiftyPound');
   const $hundredPound = $('.hundredPound');
+
   const $reset = $('.resetBet');
+
   const $firstPlace = $('.firstPlace');
   const $secondPlace = $('.secondPlace');
   const $thirdPlace = $('.thirdPlace');
-  const $cashAvailable = $('.cashAvailable');
+
+  let $cashAvailable = $('.cashAvailable');
   const $placeBet = $('.placeBet');
   let $potentialReturn = $('.potentialReturn');
+
   let winner = null;
   let firstPlace = null;
   let secondPlace = null;
   let thirdPlace = null;
+
+  const $playerWallet = $('.playerWallet');
   let $finalBet = $('.finalBet');
   let betAmount = 0;
   let finalBet = '';
-  let wallet = '250';
+  let wallet = 250;
   let horseChoice = null;
+  let moneyLeft = $cashAvailable - $playerWallet.html();
 
-  // Betting area
+  // Choosing a horse
+  $cashAvailable.text('You have: £' + wallet);
 
   $horse.on('click', (e) => {
     horseChoice = $(e.target).html();
@@ -54,8 +63,9 @@ $(() => {
     }
   });
 
+  // Select the betting value
 
-  $cashAvailable.text(250);
+
 
   $onePound.on('click', (e)  => {
     console.log('one');
@@ -66,31 +76,31 @@ $(() => {
 
   $fivePound.on('click', (e)  => {
     console.log('five');
-    const betAmount = $(e.target).val();
+    betAmount = $(e.target).val();
     $playerWallet.html(betAmount);
   });
 
   $tenPound.on('click', (e)  => {
     console.log('ten');
-    const betAmount = $(e.target).val();
+    betAmount = $(e.target).val();
     $playerWallet.html(betAmount);
   });
 
   $twentyPound.on('click', (e)  => {
     console.log('twenty');
-    const betAmount = $(e.target).val();
+    betAmount = $(e.target).val();
     $playerWallet.html(betAmount);
   });
 
   $fiftyPound.on('click', (e)  => {
     console.log('fifty');
-    const betAmount = $(e.target).val();
+    betAmount = $(e.target).val();
     $playerWallet.html(betAmount);
   });
 
   $hundredPound.on('click', (e)  => {
     console.log('hundred');
-    const betAmount = $(e.target).val();
+    betAmount = $(e.target).val();
     $playerWallet.html(betAmount);
   });
 
@@ -104,38 +114,60 @@ $(() => {
 
   $placeBet.on('click', (e) => {
     console.log('bet placed');
-    const moneyLeft = $cashAvailable.html() - $playerWallet.html();
-    $cashAvailable.html(moneyLeft);
     const horse = $betting.text();
     if (horse === '1. Bullet-Proof: 3/1') {
+      horseChoice = 'Bullet-Proof';
       $finalBet.text('Bullet-Proof');
-      $potentialReturn.html('Potential return ' + '£' + ($playerWallet.html() * 3));
+      $cashAvailable.text('You have £' + (wallet - $playerWallet.text()));
+      $potentialReturn.text('Return: ' + $playerWallet.html() * 3);
+      console.log(4);
     } else if (horse === '2. Emerald Fire: 5/1') {
+      horseChoice = 'Emerald Fire';
       $finalBet.text('Emerald Fire');
-      $potentialReturn.html('Potential return ' + '£' + ($playerWallet.html() * 5));
+      $cashAvailable.text('You have £' + (wallet - $playerWallet.text()));
+      $potentialReturn.html($playerWallet.html() * 5);
     } else if (horse === '3. Jalapeno: 1/2') {
+      horseChoice = 'Jalapeno';
       $finalBet.text('Jalapeno');
-      $potentialReturn.html('Potential return ' + '£' + ($playerWallet.html() * .5));
+      $cashAvailable.text('You have £' + (wallet - $playerWallet.text()));
+      $potentialReturn.html($playerWallet.html() * .5);
     } else if (horse === '4. Mischief: 7/1') {
+      horseChoice = 'Mischief';
       $finalBet.text('Mischief');
-      $potentialReturn.html('Potential return ' + '£' + ($playerWallet.html() * 7));
+      $cashAvailable.text('You have £' + (wallet - $playerWallet.text()));
+      $potentialReturn.html($playerWallet.html() * 7);
     } else if (horse === '5. Please Baby: 10/1') {
+      horseChoice = 'Please Baby';
       $finalBet.text('Please Baby');
-      $potentialReturn.html('Potential return ' + '£' + ($playerWallet.html() * 10));
+      $cashAvailable.text('You have £' + (wallet - $playerWallet.text()));
+      $potentialReturn.html($playerWallet.html() * 10);
     } else if (horse === '6. Rise to Glory: 4/1') {
+      horseChoice = 'Rise to Glory';
       $finalBet.text('Rise to Glory');
-      $potentialReturn.html('Potential return ' + '£' + ($playerWallet.html() * 4));
+      $cashAvailable.text('You have £' + (wallet - $playerWallet.text()));
+      $potentialReturn.html($playerWallet.html() * 4);
     } else if (horse === '7. Tramp Time: 20/1') {
+      horseChoice = 'Tramp Time';
       $finalBet.text('Tramp Time');
-      $potentialReturn.html('Potential return ' + '£' + ($playerWallet.html() * 20));
+      $cashAvailable.text('You have £' + (wallet - $playerWallet.text()));
+      $potentialReturn.html($playerWallet.html() * 20);
     } else if (horse === '8. Witch Craft: 9/1') {
+      horseChoice = 'Witch Craft';
       $finalBet.text('Witch Craft');
-      $potentialReturn.html('Potential return ' + '£' + ($playerWallet.html() * 9));
+      $cashAvailable.text('You have £' + (wallet - $playerWallet.text()));
+      $potentialReturn.html($playerWallet.html() * 9);
     }
   });
-  // $potentialReturn.text($playerWallet.html() *  );
 
-
+  function checkWinner() {
+    if (horseChoice === winner) {
+      alert('You have a winner!');
+      $cashAvailable.text((parseInt($playerWallet.text()) + parseInt($potentialReturn.text()) + parseInt(wallet)));
+    } else {
+      alert('Unlucky, keeping gambling!');
+      $cashAvailable.text((parseInt(wallet)) - (parseInt($playerWallet.text())));
+    }
+  }
   // Animation
 
   $('#startRace').click(function() {
@@ -148,7 +180,7 @@ $(() => {
       }
     }).promise().done(function (){
       if(winner === null) {
-        winner = 'horse1';
+        winner = 'Bullet-Proof';
         $firstPlace.text('1st: Bullet-Proof !');
       } else if (secondPlace === null) {
         secondPlace = 'horse1';
@@ -156,6 +188,7 @@ $(() => {
       } else if (thirdPlace === null) {
         thirdPlace = 'horse1';
         $thirdPlace.text('3rd: Bullet-Proof !');
+        checkWinner();
       }
     });
   });
@@ -170,7 +203,7 @@ $(() => {
       }
     }).promise().done(function (){
       if (winner === null) {
-        winner = 'horse2';
+        winner = 'Emerald Fire';
         $firstPlace.text('1st: Emerald Fire !');
       } else if (secondPlace === null)  {
         secondPlace = 'horse2';
@@ -178,6 +211,7 @@ $(() => {
       } else if (thirdPlace === null) {
         thirdPlace = 'horse2';
         $thirdPlace.text('3rd: Emerald Fire !');
+        checkWinner();
       }
     });
   });
@@ -192,7 +226,7 @@ $(() => {
       }
     }).promise().done(function (){
       if (winner === null) {
-        winner = 'horse3';
+        winner = 'Jalapeno';
         $firstPlace.text('1st: Jalapeno !');
       } else if (secondPlace === null)  {
         secondPlace = 'horse3';
@@ -200,6 +234,7 @@ $(() => {
       } else if (thirdPlace === null) {
         thirdPlace = 'horse3';
         $thirdPlace.text('3rd: Jalapeno !');
+        checkWinner();
       }
     });
   });
@@ -214,7 +249,7 @@ $(() => {
       }
     }).promise().done(function (){
       if (winner === null) {
-        winner = 'horse4';
+        winner = 'Mischief';
         $firstPlace.text('1st: Mischief !');
       } else if (secondPlace === null) {
         secondPlace = 'horse4';
@@ -222,6 +257,7 @@ $(() => {
       } else if (thirdPlace === null) {
         thirdPlace = 'horse4';
         $thirdPlace.text('3rd: Mischief !');
+        checkWinner();
       }
     });
   });
@@ -236,7 +272,7 @@ $(() => {
       }
     }).promise().done(function (){
       if (winner === null) {
-        winner = 'horse5';
+        winner = 'Please Baby';
         $firstPlace.text('1st: Please Baby !');
       } else if (secondPlace === null) {
         secondPlace = 'horse5';
@@ -244,6 +280,7 @@ $(() => {
       } else if (thirdPlace === null) {
         thirdPlace = 'horse5';
         $thirdPlace.text('3rd: Please Baby !');
+        checkWinner();
       }
     });
   });
@@ -258,14 +295,15 @@ $(() => {
       }
     }).promise().done(function (){
       if (winner === null) {
-        winner = 'horse6';
+        winner = 'Rise to Glory';
         $firstPlace.text('1st: Rise to Glory !');
       } else if (secondPlace === null) {
-        secondPlace = 'horse6';
+        secondPlace = '';
         $secondPlace.text('2nd: Rise to Glory !');
       } else if (thirdPlace === null) {
         thirdPlace = 'horse6';
         $thirdPlace.text('3rd: Rise to Glory !');
+        checkWinner();
       }
     });
   });
@@ -280,7 +318,7 @@ $(() => {
       }
     }).promise().done(function (){
       if (winner === null) {
-        winner = 'horse7';
+        winner = 'Time Tramp';
         $firstPlace.text('1st: Tramp Time !');
       } else if (secondPlace === null) {
         secondPlace = 'horse7';
@@ -288,6 +326,7 @@ $(() => {
       } else if (thirdPlace === null) {
         thirdPlace = 'horse7';
         $thirdPlace.text('3rd: Time Tramp !');
+        checkWinner();
       }
     });
   });
@@ -296,13 +335,13 @@ $(() => {
     $('.horse8').animate({
       left: 1000
     }, {
-      duration: Math.floor(Math.random() * 900),
+      duration: Math.floor(Math.random() * 9000),
       step: function(now){
         $( '.horse6:gt(0)').css('left', now );
       }
     }).promise().done(function (){
       if (winner === null) {
-        winner = 'horse8';
+        winner = 'Witch Craft';
         $firstPlace.text('1st: Witch Craft !');
       } else if (secondPlace === null) {
         secondPlace = 'horse8';
@@ -310,13 +349,17 @@ $(() => {
       } else if (thirdPlace === null) {
         thirdPlace = 'horse8';
         $thirdPlace.text('3rd: Witch Craft !');
+        checkWinner();
       }
     });
   });
   // Restart buttons
 
-  $('#startAgain').click(function() {
-    location.reload();
+  $('#startAgain').on('click', () => {
+    $horseGroup.attr('style', '');
+    $betting.text('To bet on a horse, click on its name');
+    $potentialReturn.text('Return: £ ');
+    $playerWallet.text('');
   });
 
 });
