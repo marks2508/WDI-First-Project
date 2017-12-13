@@ -163,9 +163,18 @@ $(() => {
     if (horseChoice === winner) {
       alert('You have a winner! Keep gambling...');
       $cashAvailable.text((parseInt($playerWallet.text()) + parseInt($potentialReturn.text()) + parseInt(wallet)));
+      $betting.text('To bet on a horse, click on its name');
+      $potentialReturn.text('Return: £ ');
+      $playerWallet.text('');
+      $odds.text('The odds: ');
     } else {
       alert('Unlucky. But luckily, you can still gamble...');
       $cashAvailable.text((parseInt(wallet)) - (parseInt($playerWallet.text())));
+      $betting.text('To bet on a horse, click on its name');
+      $potentialReturn.text('Return: £ ');
+      $playerWallet.text('');
+      $odds.text('The odds: ');
+      alert('please press next race, and then start race once you have placed a bet');
     }
   }
   // Animation
@@ -361,6 +370,13 @@ $(() => {
     $potentialReturn.text('Return: £ ');
     $playerWallet.text('');
     $odds.text('The odds: ');
+    $firstPlace.text('1st: ');
+    secondPlace = null;
+    $secondPlace.text('2nd: ');
+    $thirdPlace.text('3rd: ');
+    thirdPlace = null;
+    $finalBet.text('Your bet: ');
+    winner = null;
   });
 
 });
