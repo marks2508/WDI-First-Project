@@ -88,7 +88,6 @@ $(() => {
       $finalBet.text('Bullet-Proof');
       $cashAvailable.text(wallet - betAmount);
       $potentialReturn.text(betAmount * 3);
-      console.log(4);
     } else if (horse === '2. Emerald Fire: 5/1') {
       horseChoice = 'Emerald Fire';
       $finalBet.text('Emerald Fire');
@@ -145,11 +144,11 @@ $(() => {
       $potentialReturn.text('');
       $playerWallet.text('');
       $odds.text('The odds: ');
-      alert('please press next race, and then start race once you have placed a bet');
+      console.log("test")
       startAgain();
     }
   }
-  
+
   function startAgain () {
     if (wallet > 0){
       $horseGroup.attr('style', '');
@@ -175,9 +174,9 @@ $(() => {
     $('.horse1').animate({
       left: '90%'
     }, {
-      duration: Math.floor(Math.random() * 900),
+      duration: Math.floor(Math.random() * 9000),
       step: function(now){
-        $( '.horse1:gt(0)').css('left', now );
+        $('.horse1:gt(0)').css('left', now );
       }
     }).promise().done(function (){
       if(winner === null) {
@@ -189,10 +188,12 @@ $(() => {
       } else if (thirdPlace === null) {
         thirdPlace = 'horse1';
         $thirdPlace.text('3rd: Bullet-Proof !');
+        console.log(1)
         checkWinner();
       }
     });
   });
+
 
 
   $('.startRace').click(function() {
@@ -201,7 +202,7 @@ $(() => {
     }, {
       duration: Math.floor(Math.random() * 9000),
       step: function(now){
-        $( '.horse2:gt(0)').css('left', now );
+        $('.horse2:gt(0)').css('left', now );
       }
     }).promise().done(function (){
       if (winner === null) {
@@ -213,6 +214,31 @@ $(() => {
       } else if (thirdPlace === null) {
         thirdPlace = 'horse2';
         $thirdPlace.text('3rd: Emerald Fire !');
+        console.log(2)
+        checkWinner();
+      }
+    });
+  });
+
+  $('.startRace').click(function() {
+    $('.horse2').animate({
+      left: '90%'
+    }, {
+      duration: Math.floor(Math.random() * 9000),
+      step: function(now){
+        $('.horse2:gt(0)').css('left', now );
+      }
+    }).promise().done(function (){
+      if (winner === null) {
+        winner = 'Emerald Fire';
+        $firstPlace.text('1st: Emerald Fire !');
+      } else if (secondPlace === null)  {
+        secondPlace = 'horse2';
+        $secondPlace.text('2nd: Emerald Fire !');
+      } else if (thirdPlace === null) {
+        thirdPlace = 'horse2';
+        $thirdPlace.text('3rd: Emerald Fire !');
+        console.log(2)
         checkWinner();
       }
     });
@@ -225,7 +251,7 @@ $(() => {
     }, {
       duration: Math.floor(Math.random() * 9000),
       step: function(now){
-        $( '.horse3:gt(0)').css('left', now );
+        $('.horse3:gt(0)').css('left', now );
       }
     }).promise().done(function (){
       if (winner === null) {
@@ -237,6 +263,7 @@ $(() => {
       } else if (thirdPlace === null) {
         thirdPlace = 'horse3';
         $thirdPlace.text('3rd: Jalapeno !');
+        console.log(3)
         checkWinner();
       }
     });
@@ -248,7 +275,7 @@ $(() => {
     }, {
       duration: Math.floor(Math.random() * 9000),
       step: function(now){
-        $( '.horse4:gt(0)').css('left', now );
+        $('.horse4:gt(0)').css('left', now );
       }
     }).promise().done(function (){
       if (winner === null) {
@@ -260,6 +287,7 @@ $(() => {
       } else if (thirdPlace === null) {
         thirdPlace = 'horse4';
         $thirdPlace.text('3rd: Mischief !');
+        console.log(4)
         checkWinner();
       }
     });
@@ -271,7 +299,7 @@ $(() => {
     }, {
       duration: Math.floor(Math.random() * 9000),
       step: function(now){
-        $( '.horse5:gt(0)').css('left', now );
+        $('.horse5:gt(0)').css('left', now );
       }
     }).promise().done(function (){
       if (winner === null) {
@@ -283,6 +311,7 @@ $(() => {
       } else if (thirdPlace === null) {
         thirdPlace = 'horse5';
         $thirdPlace.text('3rd: Please Baby !');
+        console.log(5)
         checkWinner();
       }
     });
@@ -295,7 +324,7 @@ $(() => {
     }, {
       duration: Math.floor(Math.random() * 9000),
       step: function(now){
-        $( '.horse6:gt(0)').css('left', now );
+        $('.horse6:gt(0)').css('left', now );
       }
     }).promise().done(function (){
       if (winner === null) {
@@ -307,6 +336,7 @@ $(() => {
       } else if (thirdPlace === null) {
         thirdPlace = 'horse6';
         $thirdPlace.text('3rd: Rise to Glory !');
+        console.log(6)
         checkWinner();
       }
     });
@@ -318,7 +348,7 @@ $(() => {
     }, {
       duration: Math.floor(Math.random() * 9000),
       step: function(now){
-        $( '.horse6:gt(0)').css('left', now );
+        $('.horse7:gt(0)').css('left', now );
       }
     }).promise().done(function (){
       if (winner === null) {
@@ -330,6 +360,7 @@ $(() => {
       } else if (thirdPlace === null) {
         thirdPlace = 'horse7';
         $thirdPlace.text('3rd: Time Tramp !');
+        console.log(7)
         checkWinner();
       }
     });
@@ -342,7 +373,7 @@ $(() => {
     }, {
       duration: Math.floor(Math.random() * 9000),
       step: function(now){
-        $( '.horse6:gt(0)').css('left', now );
+        $('.horse8:gt(0)').css('left', now );
       }
     }).promise().done(function (){
       if (winner === null) {
@@ -354,6 +385,7 @@ $(() => {
       } else if (thirdPlace === null) {
         thirdPlace = 'horse8';
         $thirdPlace.text('3rd: Witch Craft !');
+        console.log(8)
         checkWinner();
       }
     });
