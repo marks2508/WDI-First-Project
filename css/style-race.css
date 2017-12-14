@@ -305,6 +305,11 @@ button {
   background-color: red;
 }
 
+input {
+  font-family: 'Racing Sans One';
+}
+
+
 .startRace {
   display: flex;
   justify-content: center;
