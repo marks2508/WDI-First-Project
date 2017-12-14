@@ -13,7 +13,9 @@ $(() => {
   const $startAgain = $('.startAgain');
   const $resultpopup = $('.resultpopup');
   const $ok = $('.ok');
-
+  const $resultalert = $('.resultalert');
+  const $resultDisplay = $('.display');
+  const $display = $('.display');
   const $firstPlace = $('.firstPlace');
   const $secondPlace = $('.secondPlace');
   const $thirdPlace = $('.thirdPlace');
@@ -42,10 +44,19 @@ $(() => {
 
   const horseNames = [null, 'Bullet-Proof', 'Emerald Fire', 'Jalapeno', 'Mischief', 'Please Baby', 'Rise to Glory', 'Tramp Time','Witch Craft'];
 
+  function alertresults() {
+    $resultDisplay.text('Results are in:\n\n1st: ' + winner + '\n2nd: ' + secondPlace + '\n3rd: ' + thirdPlace + '\n4th: ' + fourthPlace + '\n5th: ' + fifthPlace + '\n6th: ' + sixthPlace + '\n7th: ' + seventhPlace + '\n8nd: ' + eighthPlace);
+    $resultalert.show();
+    $resultalert.on('click', function(){
+      $resultalert.hide();
+    });
+  }
+
   $resultpopup.on('click', function(){
     console.log('click');
     $resultpopup.hide();
   });
+
 
   // Choosing a horse
   $cashAvailable.text(wallet);
@@ -80,7 +91,6 @@ $(() => {
     const amount = $(e.target).val(); // £1
     const amountWithoutCurrency = amount.replace('£', '');
     const amountAsInteger = parseInt(amountWithoutCurrency);
-
     betAmount = amountAsInteger;
     $playerWallet.text('£' + betAmount);
   });
@@ -192,9 +202,9 @@ $(() => {
   function resultDisplay() {
     setTimeout(function() {
       checkWinner();
-      alert('Results are in:\n\n1st: ' + winner + '\n2nd: ' + secondPlace + '\n3rd: ' + thirdPlace + '\n4th: ' + fourthPlace + '\n5th: ' + fifthPlace + '\n6th: ' + sixthPlace + '\n7th: ' + seventhPlace + '\n8nd: ' + eighthPlace);
+      alertresults();
       startAgain();
-    }, 5432);
+    }, 3000);
   }
 
 

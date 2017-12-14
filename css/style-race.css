@@ -173,10 +173,11 @@ li {
   /* visibility: hidden; */
   z-index: 50;
 }
-.resultalert p {
+.resultalert {
+  display: none;
   position: absolute;
   top: 25%;
-  margin-left: 5%;
+  margin-left: 25%;
   margin-right: 30%;
   text-align: center;
   width: 30%;
@@ -189,7 +190,6 @@ li {
   border-radius: 25px;
   font-size: 17px;
   border: 2px solid black;
-  visibility: hidden;
   z-index: 50;
 }
 
