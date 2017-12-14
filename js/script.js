@@ -11,7 +11,8 @@ $(() => {
   const $betButtons = $('.betButton');
   const $startRace = $('.startRace');
   const $startAgain = $('.startAgain');
-  const $reset = $('.resetBet');
+  const $resultpopup = $('.resultpopup');
+  const $ok = $('.ok');
 
   const $firstPlace = $('.firstPlace');
   const $secondPlace = $('.secondPlace');
@@ -40,6 +41,11 @@ $(() => {
   let horseChoice = null;
 
   const horseNames = [null, 'Bullet-Proof', 'Emerald Fire', 'Jalapeno', 'Mischief', 'Please Baby', 'Rise to Glory', 'Tramp Time','Witch Craft'];
+
+  $resultpopup.on('click', function(){
+    console.log('click');
+    $resultpopup.hide();
+  });
 
   // Choosing a horse
   $cashAvailable.text(wallet);
