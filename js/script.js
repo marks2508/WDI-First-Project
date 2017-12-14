@@ -1,4 +1,3 @@
-console.log('JS loaded - fine');
 $(() => {
 
   // Variables
@@ -17,7 +16,7 @@ $(() => {
   const $winnerdisplay = $('.winnerdisplay');
   const $nowinalert = $('.nowinalert');
   const $nowinnerdisplay = $('.nowinnerdisplay');
-  const $nocashalert = $('nocashalert');
+  const $nocashalert = $('.nocashalert');
   const $nocashleftdisplay = $('.nocashleftdisplay');
 
 
@@ -72,15 +71,16 @@ $(() => {
   }
 
   function alertnocash() {
-    $nocashleftdisplay.text('Sorry, you have no cash left \nGAME OVER');
+    console.log('why oh why');
+    $nocashleftdisplay.text('Sorry, you have no cash left GAME OVER');
     $nocashalert.show();
     $nocashalert.on('click', function(){
       $nocashalert.hide();
+      location.reload();
     });
   }
 
   $resultpopup.on('click', function(){
-    console.log('click');
     $resultpopup.hide();
   });
 
@@ -117,7 +117,6 @@ $(() => {
   });
 
   $placeBet.on('click', function() {
-    console.log('bet placed');
     const horse = $betting.text();
     if (horse === 'Bullet-Proof: 3/1') {
       horseChoice = 'Bullet-Proof';
@@ -171,7 +170,6 @@ $(() => {
       $potentialReturn.text('');
       $playerWallet.text('');
       $odds.text('The odds: ');
-      console.log('test1');
       // startAgain();
     } else {
       alertnowin();
@@ -181,11 +179,11 @@ $(() => {
       $potentialReturn.text('');
       $playerWallet.text('');
       $odds.text('The odds: ');
-      console.log('test2');
     }
   }
 
   function startAgain () {
+    console.log('wallet: ',wallet);
     if (wallet > 0) {
       $horseGroup.attr('style', '');
       $betting.text('To bet on a horse, click on its name');
@@ -204,24 +202,19 @@ $(() => {
       sixthPlace = null;
       seventhPlace = null;
       eighthPlace = null;
-      console.log('test3');
     } else {
       alertnocash();
       console.log('test4');
-      
     }
   }
 
   function resultDisplay() {
-    setTimeout(function() {
-      checkWinner();
-    }, 3000);
+    checkWinner();
   }
+
   function restartTheRace(){
-    setTimeout(function() {
-      alertresults();
-      startAgain();
-    }, 2000);
+    alertresults();
+    startAgain();
   }
 
 
