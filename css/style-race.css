@@ -15,7 +15,7 @@ h1 {
   font-size: 35px;
   color: white;
   text-align: center;
-  background: blue;  
+  background: blue;
   border-radius: 2px;
 }
 
@@ -134,7 +134,9 @@ li {
   width: 175px;
   list-style: none;
   cursor: pointer;
+  box-shadow: 0 3px blue;
 }
+
 
 .horseresults {
   display: flex;
@@ -175,6 +177,21 @@ li {
   /* visibility: hidden; */
   z-index: 50;
 }
+.playButton{
+  display: flex;
+  color: white;
+  background-color: blue;
+  padding: 10px;
+  border-radius: 10px;
+  text-align: center;
+  margin-left: 35%;
+  font-size: 18px;
+  cursor: pointer;
+}
+.playButton:hover {
+  background-color: red;
+}
+
 .resultalert {
   display: none;
   position: absolute;
