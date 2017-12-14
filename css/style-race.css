@@ -2,7 +2,7 @@ body {
 }
 
 main {
-  background-color: green;
+  background-color: rgb(34,139,34);
   background-size: cover;
   border-radius: 25px;
 
@@ -16,7 +16,7 @@ h1 {
   color: white;
   text-align: center;
   background: blue;
-  border-radius: 2px;
+  border-radius: 10px;
 }
 
 .bet {
@@ -74,7 +74,7 @@ h1 {
   margin: 10px 0;
 }
 .horse1 {
-  background-color: blue;
+  background-color: rgb(0,191,255);
   color: white;
 }
 .horse2 {
@@ -82,7 +82,7 @@ h1 {
   color: white;
 }
 .horse3 {
-  background-color: green;
+  background-color: rgb(0,255,0);
   color: white;
 }
 .horse4 {
@@ -125,16 +125,18 @@ td {
 li {
   padding: 8px;
   margin: 10px 0;
-  border: 2px solid black;
+  border: 2px solid rgb(100,149,237);
   border-radius: 25px;
   font-size: 17px;
   font-family: 'Racing Sans One';
-  text-shadow: .5px  blue;
-  background: red;
+  text-shadow: .3px  blue;
+  color: rgb(250,235,215);
+  background: rgb(178,34,34);
   width: 175px;
   list-style: none;
   cursor: pointer;
   box-shadow: 0 3px blue;
+  letter-spacing: 0.05em;
 }
 
 
@@ -319,14 +321,19 @@ input {
   background: lightblue;
   margin: 40px;
   padding: 8px;
-  border-radius: 25px;
+  border-radius: 15px;
   font-size: 17px;
   border: 2px solid black;
   width: 175px;
   cursor: pointer;
   outline-style: none;
+  box-shadow: 0 9px #999;
 }
 .startRace:hover {
   background-color: yellow;
-
+}
+.startRace:active {
+background-color: #3e8e41;
+box-shadow: 0 5px #666;
+transform: translateY(4px);
 }
