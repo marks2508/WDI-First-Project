@@ -222,7 +222,7 @@ li {
   font-family: 'Racing Sans One';
   text-shadow: .5px  blue;
   background: lightblue;
-  opacity: .8;
+  /* opacity: 1; */
   /* margin: 0 10px; */
   padding: 8px;
   border-radius: 25px;

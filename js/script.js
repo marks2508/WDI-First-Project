@@ -223,7 +223,7 @@ $(() => {
       $('.horse'+ i ).animate( {
         left: '90%'
       }, {
-        duration: Math.floor(Math.random() * 9000),
+        duration: Math.floor((Math.random() + 0.1) * 9000),
         step: function(now){
           $('.horse'+ i + ':gt(0)').css('left', now );
         }
