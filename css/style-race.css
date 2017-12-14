@@ -299,6 +299,7 @@ button {
   justify-content: center;
   align-items: center;
   cursor: pointer;
+  outline-style: none;
 }
 
 .placeBet:hover {
@@ -322,4 +323,10 @@ input {
   font-size: 17px;
   border: 2px solid black;
   width: 175px;
+  cursor: pointer;
+  outline-style: none;
+}
+.startRace:hover {
+  background-color: yellow;
+
 }
