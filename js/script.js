@@ -31,6 +31,7 @@ $(() => {
   let seventhPlace = null;
   let eighthPlace = null;
 
+
   let $playerWallet = $('.playerWallet');
   let $finalBet = $('.finalBet');
   let betAmount = 0;
@@ -177,10 +178,13 @@ $(() => {
       window.location = 'index.html';
     }
   }
+
+
+
   function resultDisplay() {
     setTimeout(function() {
       checkWinner();
-      alert('Results are in:\n\n1st: ' + winner + '\n2nd: ' + secondPlace + '\n3rd: ' + thirdPlace + '\n4th: ' + fourthPlace + '\n5th: ' + fifthPlace + '\n6th: ' + sixthPlace + '\n7th: ' + seventhPlace + '\n8nd: ' + eighthPlace);
+      alert('Results are in:\n\n1st: ' + winner + '\n2nd: ' + secondPlace + '\n3rd: ' + thirdPlace + '\n4th: ' + fourthPlace + '\n5th: ' + fifthPlace + '\n6th: ' + sixthPlace + '\n7th: ' + seventhPlace + '\n8nd: ' + eighthPlace);      
       startAgain();
     }, 5432);
   }
