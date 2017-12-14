@@ -121,7 +121,7 @@ $(() => {
       $finalBet.text(horseChoice);
       $cashAvailable.text(wallet - betAmount);
       $potentialReturn.html(betAmount * 4);
-    } else if (horse === 'Tramp Time: 20/1') {
+    } else if (horse === 'Time Tramp: 20/1') {
       horseChoice = 'Tramp Time';
       $finalBet.text(horseChoice);
       $cashAvailable.text(wallet - betAmount);
