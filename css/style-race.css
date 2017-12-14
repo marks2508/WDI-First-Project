@@ -13,8 +13,10 @@ main {
 h1 {
   font-family: 'Racing Sans One';
   font-size: 35px;
-  color: blue;
+  color: white;
   text-align: center;
+  background: blue;  
+  border-radius: 2px;
 }
 
 .bet {
