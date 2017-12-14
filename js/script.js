@@ -69,7 +69,7 @@ $(() => {
   }
 
   function alertnowin() {
-    $nowinnerdisplay.text('Unlucky. But luckily, you can still gamble...');
+    $nowinnerdisplay.text('Your horse did not finish first, unlucky');
     $nowinalert.show();
     $nowinalert.on('click', function(){
       $nowinalert.hide();
@@ -78,7 +78,7 @@ $(() => {
 
   function alertnocash() {
     console.log('why oh why');
-    $nocashleftdisplay.text('Sorry, you have no cash left GAME OVER');
+    $nocashleftdisplay.text('Sorry, you have no cash left GAME OVER! Click here to play again');
     $nocashalert.show();
     $nocashalert.on('click', function(){
       $nocashalert.hide();
