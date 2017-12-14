@@ -1,8 +1,11 @@
 body {
-  background-color: #fff6f6;
 }
 
 main {
+  background-image: url('/Users/mark/development/first-app/images/turf-track.jpg');
+  background-size: cover;
+  border-radius: 20px;
+
   max-width: 1200px;
   margin: 0 auto;
 }
@@ -156,7 +159,6 @@ a {
   font-size: 25px;
 }
 .race {
-  background-image: url('/Users/mark/development/first-app/images/turf.jpg');
   display: flex;
   justify-content: space-around;
   /* top: 595px; */
