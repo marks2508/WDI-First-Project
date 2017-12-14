@@ -192,9 +192,9 @@ $(() => {
     }, 5432);
   }
 
-  const horseNames = ['Bullet-Proof', 'Emerald Fire', 'Jalapeno', 'Mischief', 'Please Baby', 'Rise to Glory', 'Tramp Time','Witch Craft'];
+  const horseNames = [null, 'Bullet-Proof', 'Emerald Fire', 'Jalapeno', 'Mischief', 'Please Baby', 'Rise to Glory', 'Tramp Time','Witch Craft'];
   $('.startRace').click(function() {
-    for(let i= 0; i <= 8 ; i++) {
+    for(let i= 1; i <= 8 ; i++) {
       $('.horse'+ i ).animate( {
         left: '90%'
       }, {
