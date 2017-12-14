@@ -5,27 +5,22 @@ $(() => {
 
   const $horse = $('.choice');
   const $odds = $('.odds');
-  let $betting = $('.bet');
+  const $betting = $('.bet');
   const $horseGroup = $('.horse-group');
 
   const $betButtons = $('.betButton');
-  const $startRace = $('.startRace');
-  const $startAgain = $('.startAgain');
   const $resultpopup = $('.resultpopup');
-  const $ok = $('.ok');
   const $resultalert = $('.resultalert');
   const $resultDisplay = $('.display');
-  const $display = $('.display');
   const $firstPlace = $('.firstPlace');
   const $secondPlace = $('.secondPlace');
   const $thirdPlace = $('.thirdPlace');
 
-  let $cashAvailable = $('.cashAvailable');
+  const $cashAvailable = $('.cashAvailable');
   const $placeBet = $('.placeBet');
-  let $potentialReturn = $('.potentialReturn');
+  const $potentialReturn = $('.potentialReturn');
 
   let winner = null;
-  let firstPlace = null;
   let secondPlace = null;
   let thirdPlace = null;
   let fourthPlace = null;
@@ -35,17 +30,16 @@ $(() => {
   let eighthPlace = null;
 
 
-  let $playerWallet = $('.playerWallet');
-  let $finalBet = $('.finalBet');
+  const $playerWallet = $('.playerWallet');
+  const $finalBet = $('.finalBet');
   let betAmount = 0;
-  let finalBet = '';
   let wallet = 250;
   let horseChoice = null;
 
   const horseNames = [null, 'Bullet-Proof', 'Emerald Fire', 'Jalapeno', 'Mischief', 'Please Baby', 'Rise to Glory', 'Tramp Time','Witch Craft'];
 
   function alertresults() {
-    $resultDisplay.text('Results are in:\n\n1st: ' + winner + '\n2nd: ' + secondPlace + '\n3rd: ' + thirdPlace + '\n4th: ' + fourthPlace + '\n5th: ' + fifthPlace + '\n6th: ' + sixthPlace + '\n7th: ' + seventhPlace + '\n8nd: ' + eighthPlace);
+    $resultDisplay.text('Results are in:' + '1st: ' + winner + '\n2nd: ' + secondPlace + '\n3rd: ' + thirdPlace + '\n4th: ' + fourthPlace + '\n5th: ' + fifthPlace + '\n6th: ' + sixthPlace + '\n7th: ' + seventhPlace + '\n8nd: ' + eighthPlace);
     $resultalert.show();
     $resultalert.on('click', function(){
       $resultalert.hide();
