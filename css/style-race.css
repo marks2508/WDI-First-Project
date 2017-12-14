@@ -214,9 +214,9 @@ li {
 .nocashalert {
   display: none;
   position: absolute;
-  top: 25%;
-  margin-left: 25%;
-  margin-right: 30%;
+  top: 65%;
+  margin-left: 15%;
+  margin-right: 20%;
   text-align: center;
   width: 30%;
   font-family: 'Racing Sans One';
@@ -273,7 +273,6 @@ button {
 .placeBet {
   justify-content: center;
   text-align: center;
-  position: center;
 }
 
 .startRace {
