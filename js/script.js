@@ -38,9 +38,8 @@ $(() => {
   let finalBet = '';
   let wallet = 250;
   let horseChoice = null;
-  let moneyLeft = $cashAvailable - betAmount;
 
-  const animal = 'dog';
+  const horseNames = [null, 'Bullet-Proof', 'Emerald Fire', 'Jalapeno', 'Mischief', 'Please Baby', 'Rise to Glory', 'Tramp Time','Witch Craft'];
 
   // Choosing a horse
   $cashAvailable.text(wallet);
@@ -192,7 +191,7 @@ $(() => {
     }, 5432);
   }
 
-  const horseNames = [null, 'Bullet-Proof', 'Emerald Fire', 'Jalapeno', 'Mischief', 'Please Baby', 'Rise to Glory', 'Tramp Time','Witch Craft'];
+
   $('.startRace').click(function() {
     for(let i= 1; i <= 8 ; i++) {
       $('.horse'+ i ).animate( {

@@ -149,9 +149,9 @@ li {
 }
 
 a {
-  text-decoration: none;
   font-family: 'Racing Sans One',cursive;
   font-size: 25px;
+  text-decoration: none;
 }
 .race {
   background-image: url('/Users/mark/development/first-app/images/turf.jpg');
@@ -159,8 +159,8 @@ a {
   /* top: 595px; */
 }
 button {
-  font-family: 'Racing Sans One', cursive;
   display: flex;
+  font-family: 'Racing Sans One', cursive;
   justify-content: center;
 }
 #startRace {
