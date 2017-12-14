@@ -177,7 +177,7 @@ li {
   display: none;
   position: absolute;
   top: 45%;
-  margin-left: 25%;
+  margin-left: 20%;
   margin-right: 30%;
   text-align: center;
   width: 30%;
@@ -196,7 +196,7 @@ li {
   display: none;
   position: absolute;
   top: 25%;
-  margin-left: 25%;
+  margin-left: 20%;
   margin-right: 30%;
   text-align: center;
   width: 30%;
@@ -215,8 +215,8 @@ li {
   display: none;
   position: absolute;
   top: 65%;
-  margin-left: 15%;
-  margin-right: 20%;
+  margin-left: 20%;
+  margin-right: 30%;
   text-align: center;
   width: 30%;
   font-family: 'Racing Sans One';
@@ -234,7 +234,7 @@ li {
   display: none;
   position: absolute;
   top: 25%;
-  margin-left: 25%;
+  margin-left: 20%;
   margin-right: 30%;
   text-align: center;
   width: 30%;
