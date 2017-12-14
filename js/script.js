@@ -176,7 +176,6 @@ $(() => {
       $potentialReturn.text('');
       $playerWallet.text('');
       $odds.text('The odds: ');
-      // startAgain();
     } else {
       alertnowin();
       wallet = wallet - parseInt(betAmount);
@@ -258,7 +257,5 @@ $(() => {
       });
     }
   });
-
-
 
 });
