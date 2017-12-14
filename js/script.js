@@ -91,44 +91,44 @@ $(() => {
   $placeBet.on('click', (e) => {
     console.log('bet placed');
     const horse = $betting.text();
-    if (horse === '1. Bullet-Proof: 3/1') {
+    if (horse === 'Bullet-Proof: 3/1') {
       horseChoice = 'Bullet-Proof';
-      $finalBet.text('Bullet-Proof');
+      $finalBet.text(horseChoice);
       $cashAvailable.text(wallet - betAmount);
       $potentialReturn.text(betAmount * 3);
-    } else if (horse === '2. Emerald Fire: 5/1') {
+    } else if (horse === 'Emerald Fire: 5/1') {
       horseChoice = 'Emerald Fire';
-      $finalBet.text('Emerald Fire');
+      $finalBet.text(horseChoice);
       $cashAvailable.text(wallet - betAmount);
       $potentialReturn.html(betAmount * 5);
-    } else if (horse === '3. Jalapeno: 1/2') {
+    } else if (horse === 'Jalapeno: 1/2') {
       horseChoice = 'Jalapeno';
-      $finalBet.text('Jalapeno');
+      $finalBet.text(horseChoice);
       $cashAvailable.text(wallet - betAmount);
       $potentialReturn.html(betAmount * .5);
-    } else if (horse === '4. Mischief: 7/1') {
+    } else if (horse === 'Mischief: 7/1') {
       horseChoice = 'Mischief';
-      $finalBet.text('Mischief');
+      $finalBet.text(horseChoice);
       $cashAvailable.text(wallet - betAmount);
       $potentialReturn.html(betAmount * 7);
-    } else if (horse === '5. Please Baby: 10/1') {
+    } else if (horse === 'Please Baby: 10/1') {
       horseChoice = 'Please Baby';
-      $finalBet.text('Please Baby');
+      $finalBet.text(horseChoice);
       $cashAvailable.text(wallet - betAmount);
       $potentialReturn.html(betAmount * 10);
-    } else if (horse === '6. Rise to Glory: 4/1') {
+    } else if (horse === 'Rise to Glory: 4/1') {
       horseChoice = 'Rise to Glory';
-      $finalBet.text('Rise to Glory');
+      $finalBet.text(horseChoice);
       $cashAvailable.text(wallet - betAmount);
       $potentialReturn.html(betAmount * 4);
-    } else if (horse === '7. Tramp Time: 20/1') {
+    } else if (horse === 'Tramp Time: 20/1') {
       horseChoice = 'Tramp Time';
-      $finalBet.text('Tramp Time');
+      $finalBet.text(horseChoice);
       $cashAvailable.text(wallet - betAmount);
       $potentialReturn.html(betAmount * 20);
-    } else if (horse === '8. Witch Craft: 9/1') {
+    } else if (horse === 'Witch Craft: 9/1') {
       horseChoice = 'Witch Craft';
-      $finalBet.text('Witch Craft');
+      $finalBet.text(horseChoice);
       $cashAvailable.text(wallet - betAmount);
       $potentialReturn.html(betAmount * 9);
     }
@@ -171,6 +171,11 @@ $(() => {
       thirdPlace = null;
       $finalBet.text('Your bet: ');
       winner = null;
+      fourthPlace = null;
+      fifthPlace = null;
+      sixthPlace = null;
+      seventhPlace = null;
+      eighthPlace = null;
       console.log('test3');
     } else {
       alert('Sorry, you have no cash left \nGAME OVER');
@@ -179,19 +184,17 @@ $(() => {
     }
   }
 
-
-
   function resultDisplay() {
     setTimeout(function() {
       checkWinner();
-      alert('Results are in:\n\n1st: ' + winner + '\n2nd: ' + secondPlace + '\n3rd: ' + thirdPlace + '\n4th: ' + fourthPlace + '\n5th: ' + fifthPlace + '\n6th: ' + sixthPlace + '\n7th: ' + seventhPlace + '\n8nd: ' + eighthPlace);      
+      alert('Results are in:\n\n1st: ' + winner + '\n2nd: ' + secondPlace + '\n3rd: ' + thirdPlace + '\n4th: ' + fourthPlace + '\n5th: ' + fifthPlace + '\n6th: ' + sixthPlace + '\n7th: ' + seventhPlace + '\n8nd: ' + eighthPlace);
       startAgain();
     }, 5432);
   }
 
   const horseNames = ['Bullet-Proof', 'Emerald Fire', 'Jalapeno', 'Mischief', 'Please Baby', 'Rise to Glory', 'Tramp Time','Witch Craft'];
   $('.startRace').click(function() {
-    for(let i= 1; i <=8 ; i++) {
+    for(let i= 0; i <= 8 ; i++) {
       $('.horse'+ i ).animate( {
         left: '90%'
       }, {
