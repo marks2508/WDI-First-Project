@@ -166,7 +166,23 @@ button {
   display: flex;
   justify-content: center;
 }
-#startRace {
+.race-buttons {
   display: flex;
   justify-content: center;
+  align-items: center;
+}
+
+
+.startRace {
+  display: flex;
+  justify-content: center;
+  font-family: 'Racing Sans One';
+  text-shadow: .5px  blue;
+  background: lightblue;
+  margin: 40px;
+  padding: 8px;
+  border-radius: 25px;
+  font-size: 17px;
+  border: 2px solid black;
+  width: 175px;
 }
