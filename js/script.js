@@ -9,9 +9,18 @@ $(() => {
   const $horseGroup = $('.horse-group');
 
   const $betButtons = $('.betButton');
+
   const $resultpopup = $('.resultpopup');
   const $resultalert = $('.resultalert');
   const $resultDisplay = $('.display');
+  const $winneralert = $('.winneralert');
+  const $winnerdisplay = $('.winnerdisplay');
+  const $nowinalert = $('.nowinalert');
+  const $nowinnerdisplay = $('.nowinnerdisplay');
+  const $nocashalert = $('nocashalert');
+  const $nocashleftdisplay = $('.nocashleftdisplay');
+
+
   const $firstPlace = $('.firstPlace');
   const $secondPlace = $('.secondPlace');
   const $thirdPlace = $('.thirdPlace');
@@ -46,13 +55,35 @@ $(() => {
     });
   }
 
+  function alertwinner() {
+    $winnerdisplay.text('You have a winner! Keep gambling...');
+    $winneralert.show();
+    $winneralert.on('click', function(){
+      $winneralert.hide();
+    });
+  }
+
+  function alertnowin() {
+    $nowinnerdisplay.text('Unlucky. But luckily, you can still gamble...');
+    $nowinalert.show();
+    $nowinalert.on('click', function(){
+      $nowinalert.hide();
+    });
+  }
+
+  function alertnocash() {
+    $nocashleftdisplay.text('Sorry, you have no cash left \nGAME OVER');
+    $nocashalert.show();
+    $nocashalert.on('click', function(){
+      $nocashalert.hide();
+    });
+  }
+
   $resultpopup.on('click', function(){
     console.log('click');
     $resultpopup.hide();
   });
 
-
-  // Choosing a horse
   $cashAvailable.text(wallet);
 
   $horse.on('click', (e) => {
@@ -77,10 +108,6 @@ $(() => {
     }
   });
 
-  // Select the betting value
-
-
-
   $betButtons.on('click', (e)  => {
     const amount = $(e.target).val(); // £1
     const amountWithoutCurrency = amount.replace('£', '');
@@ -89,15 +116,7 @@ $(() => {
     $playerWallet.text('£' + betAmount);
   });
 
-  // $reset.on('click', (e) => {
-  //   console.log('reset');
-  //   $playerWallet.html('Your bet: ');
-  //   $cashAvailable.html(250);
-  //   $betting.text('To bet on a horse, click on its name');
-  //   $finalBet.text = '';
-  // });
-
-  $placeBet.on('click', (e) => {
+  $placeBet.on('click', function() {
     console.log('bet placed');
     const horse = $betting.text();
     if (horse === 'Bullet-Proof: 3/1') {
@@ -145,7 +164,7 @@ $(() => {
 
   function checkWinner() {
     if (horseChoice === winner) {
-      alert('You have a winner! Keep gambling...');
+      alertwinner();
       wallet = wallet + parseInt($potentialReturn.text());
       $cashAvailable.text(wallet);
       $betting.text('To bet on a horse, click on its name');
@@ -155,7 +174,7 @@ $(() => {
       console.log('test1');
       // startAgain();
     } else {
-      alert('Unlucky. But luckily, you can still gamble...');
+      alertnowin();
       wallet = wallet - parseInt(betAmount);
       $cashAvailable.text(wallet);
       $betting.text('To bet on a horse, click on its name');
@@ -187,18 +206,22 @@ $(() => {
       eighthPlace = null;
       console.log('test3');
     } else {
-      alert('Sorry, you have no cash left \nGAME OVER');
+      alertnocash();
       console.log('test4');
-      window.location = 'index.html';
+      
     }
   }
 
   function resultDisplay() {
     setTimeout(function() {
       checkWinner();
+    }, 3000);
+  }
+  function restartTheRace(){
+    setTimeout(function() {
       alertresults();
       startAgain();
-    }, 3000);
+    }, 2000);
   }
 
 
@@ -232,6 +255,7 @@ $(() => {
         } else if (eighthPlace === null) {
           eighthPlace = horseNames[i];
           resultDisplay();
+          restartTheRace();
         }
       });
     }
