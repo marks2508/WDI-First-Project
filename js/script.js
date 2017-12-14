@@ -39,6 +39,8 @@ $(() => {
   let horseChoice = null;
   let moneyLeft = $cashAvailable - betAmount;
 
+  const animal = 'dog';
+
   // Choosing a horse
   $cashAvailable.text(wallet);
 
@@ -177,13 +179,13 @@ $(() => {
   }
   function resultDisplay() {
     setTimeout(function() {
-      alert('Results are in:\n\n1st: ' + firstPlace + '\n2nd: ' + secondPlace + '\n3rd: ' + thirdPlace + '\n4th: ' + fourthPlace + '\n5th: ' + fifthPlace + '\n6th: ' + sixthPlace + '\n7th: ' + seventhPlace + '\n8nd: ' + eighthPlace);
       checkWinner();
+      alert('Results are in:\n\n1st: ' + winner + '\n2nd: ' + secondPlace + '\n3rd: ' + thirdPlace + '\n4th: ' + fourthPlace + '\n5th: ' + fifthPlace + '\n6th: ' + sixthPlace + '\n7th: ' + seventhPlace + '\n8nd: ' + eighthPlace);
       startAgain();
     }, 5432);
   }
 
-  const horseNames = ['cliff', 'Mark', 'Gerry', 'Ben', 'steve', 'john', 'bill','bob'];
+  const horseNames = ['Bullet-Proof', 'Emerald Fire', 'Jalapeno', 'Mischief', 'Please Baby', 'Rise to Glory', 'Tramp Time','Witch Craft'];
   $('.startRace').click(function() {
     for(let i= 1; i <=8 ; i++) {
       $('.horse'+ i ).animate( {
@@ -196,23 +198,23 @@ $(() => {
       }).promise().done(function (){
         if (winner === null) {
           winner = horseNames[i];
-          $firstPlace.text('1st: ' + horseNames[i] + ' !');
+          $firstPlace.text('1st: ' + horseNames[i]);
         } else if (secondPlace === null)  {
-          secondPlace = 'horse'+i;
-          $secondPlace.text('2nd: ' + horseNames[i] + ' !');
+          secondPlace = horseNames[i];
+          $secondPlace.text('2nd: ' + horseNames[i]);
         } else if (thirdPlace === null) {
-          thirdPlace = 'horse'+i;
-          $thirdPlace.text('3rd: ' + horseNames[i] + ' !');
+          thirdPlace = horseNames[i];
+          $thirdPlace.text('3rd: ' + horseNames[i]);
         } else if (fourthPlace === null) {
-          fourthPlace = 'hourse'+i;
+          fourthPlace = horseNames[i];
         } else if (fifthPlace === null) {
-          fifthPlace = 'hourse'+i;
+          fifthPlace = horseNames[i];
         } else if (sixthPlace === null) {
-          sixthPlace = 'horse'+i;
+          sixthPlace = horseNames[i];
         } else if (seventhPlace === null) {
-          seventhPlace = 'horse'+i;
+          seventhPlace = horseNames[i];
         } else if (eighthPlace === null) {
-          eighthPlace = 'horse'+i;
+          eighthPlace = horseNames[i];
           resultDisplay();
         }
       });
