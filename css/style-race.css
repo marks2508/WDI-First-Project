@@ -2,9 +2,9 @@ body {
 }
 
 main {
-  background-image: url('/Users/mark/development/first-app/images/turf-track.jpg');
+  background-color: green;
   background-size: cover;
-  border-radius: 20px;
+  border-radius: 25px;
 
   max-width: 1200px;
   margin: 0 auto;
@@ -290,8 +290,19 @@ button {
   justify-content: center;
 }
 .placeBet {
+  position: relative;
+  left: 35px;
+  display: flex;
+  font-size: 14px;
+  width: 100px;
+  border-radius: 12px;
   justify-content: center;
-  text-align: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.placeBet:hover {
+  background-color: red;
 }
 
 .startRace {
