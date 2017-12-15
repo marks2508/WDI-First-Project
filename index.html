@@ -1,19 +1,122 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <title> And they're off! </title>
-    <link href="https://fonts.googleapis.com/css?family=Racing+Sans+One" rel="stylesheet">
-    <link rel="stylesheet" href="css/animate.css">
-    <link rel="stylesheet" href="./css/style.css">
-    <script src="js/script.js" charset="utf-8"></script>
-  </head>
-  <body>
-    <div class="task">
-      <a href="race-v2.html"><button id="toggle">Play the game</button></a>
-      <div class="circle animated infinite"></div>
+<head>
+  <meta charset="utf-8">
+  <title> And they're off! </title>
+  <link href="https://fonts.googleapis.com/css?family=Racing+Sans+One" rel="stylesheet">
+  <link rel="stylesheet" href="css/animate.css">
+  <link rel="stylesheet" href="./css/style.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+  <script src="js/script.js" charset="utf-8"></script>
+</head>
+<body>
+  <main>
+
+    <h1 class="header">And They're Off!</h1>
+
+    <div class="horseresults">
+      <p class="firstPlace">1st: </p>
+      <p class="secondPlace">2nd: </p>
+      <p class="thirdPlace">3rd: </p>
+      <p class="finalBet">Your bet: </p>
     </div>
-    <p>And They're Off!</p>
-  </div>
+
+    <div class="race-buttons">
+      <button class="startRace">Start race</button>
+    </div>
+
+    <div class="main-area">
+      <ul>
+        <li class="choice">Bullet-Proof: 3/1</li>
+        <li class="choice">Emerald Fire: 5/1</li>
+        <li class="choice">Jalapeno: 1/2</li>
+        <li class="choice">Mischief: 7/1</li>
+        <li class="choice">Please Baby: 10/1</li>
+        <li class="choice">Rise to Glory: 4/1</li>
+        <li class="choice">Time Tramp: 20/1</li>
+        <li class="choice">Witch Craft: 9/1</li>
+      </ul>
+
+      <div class="resultpopup">
+        <p>To play:<br/>
+          Choose a horse that you want to bet on<br/> click on its name<br/>
+          chose an amount that you would like to place on the horse<br/>
+          click on place bet and start the race!<br/><br/> Good luck!<br/><br/><button class="playButton">Click here to play</button></p>
+      </div>
+
+      <div class="resultalert">
+        <p class="display"</p>
+      </div>
+
+      <div class="winneralert">
+        <p class="winnerdisplay"</p>
+      </div>
+
+      <div class="nowinalert">
+        <p class="nowinnerdisplay"</p>
+      </div>
+
+      <div class="nocashalert">
+        <p class="nocashleftdisplay"</p>
+      </div>
+
+      <div class="race">
+        <div class="racetrack">
+          <div class="horse1 horse-group">
+            <img src="./images/animated-horse.jpg" width="30" height="30" class="horse1">
+          </div>
+          <div class="horse2 horse-group">
+            <img src="./images/animated-horse.jpg" width="30" height="30" class="horse2">
+          </div>
+          <div class="horse3 horse-group">
+            <img src="./images/animated-horse.jpg" width="30" height="30" class="horse3">
+          </div>
+          <div class="horse4 horse-group">
+            <img src="./images/animated-horse.jpg" width="30" height="30" class="horse4">
+          </div>
+          <div class="horse5 horse-group">
+            <img src="./images/animated-horse.jpg" width="30" height="30" class="horse5">
+          </div>
+          <div class="horse6 horse-group">
+            <img src="./images/animated-horse.jpg" width="30" height="30" class="horse6">
+          </div>
+          <div class="horse7 horse-group">
+            <img src="./images/animated-horse.jpg" width="30" height="30" class="horse7">
+          </div>
+          <div class="horse8 horse-group">
+            <img src="./images/animated-horse.jpg" width="30" height="30" class="horse8">
+          </div>
+        </div>
+
+      <form name="total">
+        <table>
+          <tr>
+            <td colspan="2">
+              <p class="bet">Choose a horse</p>
+              <p>Your bet: <span class="playerWallet"></span></p>
+              <p>Odds: <span class="odds"></span></p>
+              <p>Cash:  £<span class="cashAvailable"></span></p>
+              <p>Return: £<span class="potentialReturn"></span></p>
+              </td>
+            </tr>
+            <tr>
+              <td><input type="button" name="one" class="betButton onePound" value=£1></td>
+              <td><input type="button" name="twenty" class="betButton twentyPound" value=£20></td>
+            </tr>
+            <tr>
+              <td><input type="button" name="four" class="betButton fivePound" value=£5></td>
+              <td><input type="button" name="five" class="betButton fiftyPound" value=£50></td>
+            </tr>
+            <tr>
+              <td><input type="button" name="seven" class="betButton tenPound" value=£10></td>
+              <td><input type="button" name="eight" class="betButton hundredPound" value=£100></td>
+            </tr>
+            <tr>
+              <td><input type="button" name="zero" class="placeBet" value="Place Bet"></td>
+            </tr>
+          </table>
+        </form>
+      </div>
+    </main>
   </body>
-</html>
+  </html>
