@@ -20,7 +20,11 @@ $(() => {
   const $nowinnerdisplay = $('.nowinnerdisplay');
   const $nocashalert = $('.nocashalert');
   const $nocashleftdisplay = $('.nocashleftdisplay');
-
+  const $sound = $('.audio').get(0);
+  const $naying = $('.nay').get(0);
+  const $win = $('.win').get(0);
+  const $lose = $('.losing').get(0);
+  const $cash = $('.cash').get(0);
 
   const $firstPlace = $('.firstPlace');
   const $secondPlace = $('.secondPlace');
@@ -61,6 +65,7 @@ $(() => {
   }
 
   function alertwinner() {
+    $win.play();
     $winnerdisplay.text('You have a winner! Keep gambling...');
     $winneralert.show();
     $winneralert.on('click', function(){
@@ -69,6 +74,7 @@ $(() => {
   }
 
   function alertnowin() {
+    $lose.play();
     $nowinnerdisplay.text('Your horse did not finish first, unlucky');
     $nowinalert.show();
     $nowinalert.on('click', function(){
@@ -87,6 +93,7 @@ $(() => {
   }
 
   $resultpopup.on('click', function(){
+    $naying.play();
     $resultpopup.hide();
   });
 
@@ -123,6 +130,7 @@ $(() => {
   });
 
   $placeBet.on('click', function() {
+    $cash.play();
     const horse = $betting.text();
     if (horse === 'Bullet-Proof: 3/1') {
       horseChoice = 'Bullet-Proof';
@@ -223,6 +231,7 @@ $(() => {
 
 
   $('.startRace').click(function() {
+    $sound.play();
     for(let i= 1; i <= 8 ; i++) {
       $('.horse'+ i ).animate( {
         left: '90%'
