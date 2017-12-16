@@ -234,13 +234,72 @@ $(() => {
     $sound.play();
     for(let i= 1; i <= 8 ; i++) {
       $('.horse'+ i ).animate( {
-        left: '90%'
+        left: '10%'
       }, {
-        duration: Math.floor((Math.random() + 0.1) * 9000),
+        duration: Math.floor((Math.random() + 0.1) * 4000),
         step: function(now){
           $('.horse'+ i + ':gt(0)').css('left', now );
         }
-      }).promise().done(function (){
+      }).animate( {
+        left: '20%'
+      }, {
+        duration: Math.floor((Math.random() + 0.1) * 4000),
+        step: function(now){
+          $('.horse'+ i + ':gt(0)').css('left', now );
+        }
+      }).animate( {
+        left: '30%'
+      }, {
+        duration: Math.floor((Math.random() + 0.1) * 4000),
+        step: function(now){
+          $('.horse'+ i + ':gt(0)').css('left', now );
+        }
+      }).animate( {
+        left: '40%'
+      }, {
+        duration: Math.floor((Math.random() + 0.1) * 4000),
+        step: function(now){
+          $('.horse'+ i + ':gt(0)').css('left', now );
+        }
+      }).animate( {
+        left: '50%'
+      }, {
+        duration: Math.floor((Math.random() + 0.1) * 4000),
+        step: function(now){
+          $('.horse'+ i + ':gt(0)').css('left', now );
+        }
+      }).animate( {
+        left: '60%'
+      }, {
+        duration: Math.floor((Math.random() + 0.1) * 4000),
+        step: function(now){
+          $('.horse'+ i + ':gt(0)').css('left', now );
+        }
+      }).animate( {
+        left: '70%'
+      }, {
+        duration: Math.floor((Math.random() + 0.1) * 4000),
+        step: function(now){
+          $('.horse'+ i + ':gt(0)').css('left', now );
+        }
+      }).animate( {
+        left: '80%'
+      }, {
+        duration: Math.floor((Math.random() + 0.1) * 4000),
+        step: function(now){
+          $('.horse'+ i + ':gt(0)').css('left', now );
+        }
+      }).animate( {
+        left: '90%'
+      }, {
+        duration: Math.floor((Math.random() + 0.1) * 4000),
+        step: function(now){
+          $('.horse'+ i + ':gt(0)').css('left', now );
+        }
+      })
+      
+      
+      .promise().done(function (){
         if (winner === null) {
           winner = horseNames[i];
           $firstPlace.text('1st: ' + horseNames[i]);
