@@ -16,6 +16,7 @@ h1 {
   color: white;
   text-align: center;
   background: blue;
+  outline-color: red;
   border-radius: 10px;
 }
 
@@ -163,7 +164,7 @@ li {
 .resultpopup p {
   position: absolute;
   top: 25%;
-  margin-left: 10%;
+  margin-left: 7%;
   margin-right: 30%;
   text-align: center;
   width: 30%;
@@ -312,7 +313,6 @@ input {
   font-family: 'Racing Sans One';
 }
 
-
 .startRace {
   display: flex;
   justify-content: center;
@@ -329,9 +329,11 @@ input {
   outline-style: none;
   box-shadow: 0 9px #999;
 }
+
 .startRace:hover {
   background-color: yellow;
 }
+
 .startRace:active {
 background-color: #3e8e41;
 box-shadow: 0 5px #666;

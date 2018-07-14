@@ -4,32 +4,34 @@ $(() => {
   // Variables
   //************************************************
 
-  const $horse = $('.choice');
-  const $odds = $('.odds');
   const $betting = $('.bet');
+  const $horse = $('.choice');
   const $horseGroup = $('.horse-group');
+  const $odds = $('.odds');
 
   const $betButtons = $('.betButton');
-
-  const $resultpopup = $('.resultpopup');
-  const $resultalert = $('.resultalert');
-  const $resultDisplay = $('.display');
-  const $winneralert = $('.winneralert');
-  const $winnerdisplay = $('.winnerdisplay');
+  const $lose = $('.losing').get(0);
+  const $naying = $('.nay').get(0);
   const $nowinalert = $('.nowinalert');
   const $nowinnerdisplay = $('.nowinnerdisplay');
   const $nocashalert = $('.nocashalert');
   const $nocashleftdisplay = $('.nocashleftdisplay');
+  const $playButton = $('.playButton');
+  const $placebetalert = $('.placebetalert');
+  const $resultpopup = $('.resultpopup');
+  const $resultalert = $('.resultalert');
+  const $resultDisplay = $('.display');
   const $sound = $('.audio').get(0);
-  const $naying = $('.nay').get(0);
   const $win = $('.win').get(0);
-  const $lose = $('.losing').get(0);
-  const $cash = $('.cash').get(0);
+  const $winneralert = $('.winneralert');
+  const $winnerdisplay = $('.winnerdisplay');
+
 
   const $firstPlace = $('.firstPlace');
   const $secondPlace = $('.secondPlace');
   const $thirdPlace = $('.thirdPlace');
 
+  const $cash = $('.cash').get(0);
   const $cashAvailable = $('.cashAvailable');
   const $placeBet = $('.placeBet');
   const $potentialReturn = $('.potentialReturn');
@@ -61,6 +63,7 @@ $(() => {
     $resultalert.show();
     $resultalert.on('click', function(){
       $resultalert.hide();
+      startAgain();
     });
   }
 
@@ -83,7 +86,7 @@ $(() => {
   }
 
   function alertnocash() {
-    console.log('why oh why');
+    console.log('game-over');
     $nocashleftdisplay.text('Sorry, you have no cash left GAME OVER! Click here to play again');
     $nocashalert.show();
     $nocashalert.on('click', function(){
@@ -91,6 +94,9 @@ $(() => {
       location.reload();
     });
   }
+  $playButton.on('click', function(){
+    $playButton.hide();
+  });
 
   $resultpopup.on('click', function(){
     $naying.play();
@@ -100,7 +106,8 @@ $(() => {
   $cashAvailable.text(wallet);
 
   $horse.on('click', (e) => {
-    horseChoice = $(e.target).html();
+    if ($playButton.is(':hidden'))
+      horseChoice = $(e.target).html();
     $betting.text(horseChoice);
     if (horseChoice === '1. Bullet-Proof: 3/1') {
       $odds.text('3/1');
@@ -229,9 +236,7 @@ $(() => {
     startAgain();
   }
 
-
-  $('.startRace').click(function() {
-    $sound.play();
+  function race() {
     for(let i= 1; i <= 8 ; i++) {
       $('.horse'+ i ).animate( {
         left: '90%'
@@ -265,6 +270,14 @@ $(() => {
         }
       });
     }
+  }
+
+  $('.startRace').click(function() {
+    $sound.play();
+    if ($playButton.is(':hidden') && horseChoice !== null && betAmount !== 0) {
+      race();
+    }
   });
+
 
 });
