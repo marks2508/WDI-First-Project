@@ -18,7 +18,6 @@ $(() => {
   const $nocashleftdisplay = $('.nocashleftdisplay');
   const $playButton = $('.playButton');
   const $placebetalert = $('.placebetalert');
-  const $placebetdisplay = $('placebetdisplay');
   const $resultpopup = $('.resultpopup');
   const $resultalert = $('.resultalert');
   const $resultDisplay = $('.display');
@@ -70,7 +69,7 @@ $(() => {
 
   function alertwinner() {
     $win.play();
-    $winnerdisplay.text('You have a winner! Keep gambling...');
+    $winnerdisplay.html('You have a winner! Keep gambling...<br>Click to continue');
     $winneralert.show();
     $winneralert.on('click', function(){
       $winneralert.hide();
@@ -79,7 +78,7 @@ $(() => {
 
   function alertnowin() {
     $lose.play();
-    $nowinnerdisplay.text('Your horse did not finish first, unlucky');
+    $nowinnerdisplay.html('Your horse did not finish first, unlucky<br>Click to continue');
     $nowinalert.show();
     $nowinalert.on('click', function(){
       $nowinalert.hide();
