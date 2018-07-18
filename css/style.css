@@ -214,6 +214,44 @@ li {
   border: 2px solid black;
   z-index: 50;
 }
+.placebetalert {
+  display: none;
+  position: absolute;
+  top: 45%;
+  margin-left: 20%;
+  margin-right: 30%;
+  text-align: center;
+  width: 30%;
+  font-family: 'Racing Sans One';
+  text-shadow: .5px  blue;
+  background: lightblue;
+  opacity: .8;
+  /* margin: 0 10px; */
+  padding: 8px;
+  border-radius: 25px;
+  font-size: 17px;
+  border: 2px solid black;
+  z-index: 50;
+}
+.placebet {
+  display: none;
+  position: absolute;
+  top: 45%;
+  margin-left: 20%;
+  margin-right: 30%;
+  text-align: center;
+  width: 30%;
+  font-family: 'Racing Sans One';
+  text-shadow: .5px  blue;
+  background: lightblue;
+  opacity: .8;
+  /* margin: 0 10px; */
+  padding: 8px;
+  border-radius: 25px;
+  font-size: 17px;
+  border: 2px solid black;
+  z-index: 50;
+}
 .winneralert {
   display: none;
   position: absolute;
