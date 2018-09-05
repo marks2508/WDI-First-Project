@@ -243,14 +243,14 @@ $(() => {
       $('.horse'+ i ).animate( {
         left: '5%'
       }, {
-        duration: Math.floor((Math.random() + 0.1) * 1500),
+        duration: Math.floor((Math.random() + 0.1) * 2000),
         step: function(now){
           $('.horse'+ i + ':gt(0)').css('left', now );
         }
       }).animate( {
         left: '10%'
       }, {
-        duration: Math.floor((Math.random() + 0.1) * 1500),
+        duration: Math.floor((Math.random() + 0.1) * 2000),
         step: function(now){
           $('.horse'+ i + ':gt(0)').css('left', now );
         }
@@ -367,7 +367,8 @@ $(() => {
         step: function(now){
           $('.horse'+ i + ':gt(0)').css('left', now );
         }
-      }).promise().done(function (){
+      })
+      .promise().done(function (){
         if (winner === null) {
           winner = horseNames[i];
           $firstPlace.text('1st: ' + horseNames[i]);
